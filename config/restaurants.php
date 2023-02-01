@@ -50,7 +50,7 @@ return [
             "email" => "sollaccheropisano@gmail.com",
             "image" => "http://via.placeholder.com/640x360",
             "address" => "Corso Italia 171, 56123 Pisa (PI)",
-            "partita_iva" => "IT46469789712",
+            "partita_iva" => "IT46469783333",
             "website" => "www.sollaccheropisano.it",
             "opening_hours" => "18:00",
             "closing_hours" => "24:00",
