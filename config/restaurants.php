@@ -16,7 +16,7 @@ return [
             "name" => "Tai Long Cucina Tipica Cinese",
             "email" => "tailong.chinaresturant@gmail.com",
             "image" => "http://via.placeholder.com/640x360",
-            "address" => "borgo Stretto 49, 56126 Pisa (PI)",
+            "address" => "Borgo Stretto 49, 56126 Pisa (PI)",
             "partita_iva" => "IT46469781111",
             "website" => "www.tailongchinaresturant.it",
             "opening_hours" => "18:00",
