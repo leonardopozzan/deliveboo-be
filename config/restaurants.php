@@ -11,6 +11,7 @@ return [
             "opening_hours" => "18:00",
             "closing_hours" => "24:00",
             "phone_number" => "3331122334",
+            "type_id" => "1",
         ],
         [
             "name" => "Tai Long Cucina Tipica Cinese",
@@ -22,6 +23,7 @@ return [
             "opening_hours" => "18:00",
             "closing_hours" => "24:00",
             "phone_number" => "3311235813",
+            "type_id" => "2",
         ],
         [
             "name" => "SushiJay Japanese Cuisine",
@@ -33,6 +35,7 @@ return [
             "opening_hours" => "18:00",
             "closing_hours" => "24:00",
             "phone_number" => "348 3525758",
+            "type_id" => "3",
         ],
         [
             "name" => "Old Wild West",
@@ -44,6 +47,7 @@ return [
             "opening_hours" => "18:00",
             "closing_hours" => "24:00",
             "phone_number" => "3518929384",
+            "type_id" => "4",
         ],
         [
             "name" => "Sollacchero Pisano",
@@ -55,6 +59,7 @@ return [
             "opening_hours" => "18:00",
             "closing_hours" => "24:00",
             "phone_number" => "3291832442",
+            "type_id" => "5",
         ],
 
         [
@@ -67,6 +72,7 @@ return [
             "opening_hours" => "18:00",
             "closing_hours" => "24:00",
             "phone_number" => "3236525768",
+            "type_id" => "6",
         ],
         [
             "name" => "Avocados from Mexico",
@@ -78,6 +84,7 @@ return [
             "opening_hours" => "18:00",
             "closing_hours" => "24:00",
             "phone_number" => "39163324523",
+            "type_id" => "7",
         ],
         [
             "name" => "Ludhiana - Punjabi Traditional Cuisine",
@@ -89,6 +96,7 @@ return [
             "opening_hours" => "18:00",
             "closing_hours" => "24:00",
             "phone_number" => "3456923426",
+            "type_id" => "8",
         ],
         [
             "name" => "Ankara - Turkish Traditional Cuisine",
@@ -100,6 +108,7 @@ return [
             "opening_hours" => "18:00",
             "closing_hours" => "24:00",
             "phone_number" => "3477034537",
+            "type_id" => "9",
         ],
         [
             "name" => "Da Zorba il Greco",
@@ -111,6 +120,7 @@ return [
             "opening_hours" => "18:00",
             "closing_hours" => "24:00",
             "phone_number" => "3526644883",
+            "type_id" => "10",
         ],
         [
             "name" => "From Urals with Love",
@@ -122,9 +132,9 @@ return [
             "opening_hours" => "18:00",
             "closing_hours" => "24:00",
             "phone_number" => "3486323100",
+            "type_id" => "11",
         ],
     ],
-
     "types" => [ 
         [
             "type_name" => "greco",
