@@ -143,7 +143,7 @@ return [
             "type_imgPath" => "http://via.placeholder.com/640x360"
         ],
         [
-            "type_name" => "amricano",
+            "type_name" => "americano",
             "type_imgPath" => "http://via.placeholder.com/640x360"
         ],
         [
