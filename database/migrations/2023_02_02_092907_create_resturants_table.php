@@ -26,6 +26,7 @@ return new class extends Migration
             $table->time('closing_hours');
             $table->string('phone_number',10);
             $table->foreignId('type_id')->cascadeOnUpdate()->nullOnDelete()->costrained();
+            $table->foreignId('user_id')->cascadeOnUpdate()->cascadeOnDelete()->costrained();
             $table->timestamps();
         });
     }
