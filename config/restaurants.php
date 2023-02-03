@@ -34,7 +34,7 @@ return [
             "website" => "www.suhijay.it",
             "opening_hours" => "18:00",
             "closing_hours" => "24:00",
-            "phone_number" => "348 3525758",
+            "phone_number" => "3506622343",
             "type_id" => [3],
         ],
         [
@@ -82,7 +82,7 @@ return [
             "website" => "www.avocadosfrommexico.it",
             "opening_hours" => "18:00",
             "closing_hours" => "24:00",
-            "phone_number" => "39163324523",
+            "phone_number" => "3916332452",
             "type_id" => [7],
         ],
         [
