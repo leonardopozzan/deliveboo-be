@@ -18,11 +18,12 @@ return new class extends Migration
             $table->string('code', 10)->unique();
             $table->string('name', 100);
             $table->string('address', 150);
-            $table->string('phone_number',10);
+            $table->string('phone_number', 10);
             $table->string('email', 100);
             $table->date('date');
-            $table->float('total_price', 5,2)->unsigned();
+            $table->float('total_price', 5, 2)->unsigned();
             $table->boolean('payment_status');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

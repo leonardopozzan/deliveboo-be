@@ -17,12 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('name', 50);
             $table->string('slug', 150)->unique();
-            $table->float('price', 5,2)->unsigned();
+            $table->float('price', 5, 2)->unsigned();
             $table->string('image')->nullable();
             $table->boolean('visible');
             $table->text('ingredients');
             $table->foreignId('restaurant_id')->cascadeOnUpdate()->cascadeOnDelete()->costrained();
             $table->foreignId('category_id')->cascadeOnUpdate()->nullOnDelete()->costrained();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

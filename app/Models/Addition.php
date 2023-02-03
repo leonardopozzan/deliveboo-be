@@ -5,13 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Order extends Model
+
+
+class Addition extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+
 
     protected $guarded = [];
+
 
     public function dishes(): BelongsToMany
     {
