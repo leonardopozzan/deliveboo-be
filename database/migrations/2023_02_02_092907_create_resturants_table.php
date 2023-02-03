@@ -20,12 +20,11 @@ return new class extends Migration
             $table->string('email', 100)->unique();
             $table->string('image')->nullable();
             $table->string('address');
-            $table->string('partita_iva', 13);
+            $table->string('p_iva', 13);
             $table->string('website')->nullable();
             $table->time('opening_hours');
             $table->time('closing_hours');
             $table->string('phone_number',10);
-            $table->foreignId('type_id')->cascadeOnUpdate()->nullOnDelete()->costrained();
             $table->foreignId('user_id')->cascadeOnUpdate()->cascadeOnDelete()->costrained();
             $table->timestamps();
         });
