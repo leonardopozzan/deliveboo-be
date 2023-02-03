@@ -98,7 +98,7 @@ return [
             "type_id" => "8",
         ],
         [
-            "name" => "Ankara - Turkish Traditional Cuisine",
+            "name" => "Ankara Kebap",
             "email" => "ankaratraditionalcuisine@gmail.com",
             "image" => "img/Ristorante_Turco.jpg",
             "address" => "Via Giacomo Leopardi 64, 56123 Pisa (PI)",
@@ -120,18 +120,6 @@ return [
             "closing_hours" => "24:00",
             "phone_number" => "3526644883",
             "type_id" => "10",
-        ],
-        [
-            "name" => "From Urals with Love",
-            "email" => "fromuralswithlove@gmail.com",
-            "image" => "img/Ristorante_Russo.jpg",
-            "address" => "Via Vittorio Veneto 44, 56121 Pisa (PI)",
-            "partita_iva" => "IT46469110000",
-            "website" => "www.fromuralswithlove.it",
-            "opening_hours" => "18:00",
-            "closing_hours" => "24:00",
-            "phone_number" => "3486323100",
-            "type_id" => "11",
         ],
     ],
     "types" => [ 
@@ -175,11 +163,6 @@ return [
             "type_name" => "greco",
             "type_imgPath" => "http://via.placeholder.com/640x360"
         ],
-        [
-            "type_name" => "russo",
-            "type_imgPath" => "http://via.placeholder.com/640x360"
-        ],
-
         [
             "type_name" => "vegana",
             "type_imgPath" => "http://via.placeholder.com/640x360"
