@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Resturant;
-use App\Http\Requests\StoreResturantRequest;
-use App\Http\Requests\UpdateResturantRequest;
+use App\Http\Requests\StoreRestaurantRequest;
+use App\Http\Requests\UpdateRestaurantRequest;
+use App\Models\Restaurant;
 
-class ResturantController extends Controller
+class RestaurantController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class ResturantController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreResturantRequest  $request
+     * @param  \App\Http\Requests\StoreRestaurantRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreResturantRequest $request)
+    public function store(StoreRestaurantRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class ResturantController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Resturant  $resturant
+     * @param  \App\Models\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function show(Resturant $resturant)
+    public function show(Restaurant $restaurant)
     {
         //
     }
@@ -53,10 +53,10 @@ class ResturantController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Resturant  $resturant
+     * @param  \App\Models\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function edit(Resturant $resturant)
+    public function edit(Restaurant $restaurant)
     {
         //
     }
@@ -64,11 +64,11 @@ class ResturantController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateResturantRequest  $request
-     * @param  \App\Models\Resturant  $resturant
+     * @param  \App\Http\Requests\UpdateRestaurantRequest  $request
+     * @param  \App\Models\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateResturantRequest $request, Resturant $resturant)
+    public function update(UpdateRestaurantRequest $request, Restaurant $restaurant)
     {
         //
     }
@@ -76,10 +76,10 @@ class ResturantController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Resturant  $resturant
+     * @param  \App\Models\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Resturant $resturant)
+    public function destroy(Restaurant $restaurant)
     {
         //
     }
