@@ -4,7 +4,7 @@ return [
         [
             "name" => "Pizzeria Fuori di Zucca",
             "email" => "pizzeriafuoridizucca@gmail.com",
-            "image" => "http://via.placeholder.com/640x360",
+            "image" => "img/Ristorante_Pizzeria.jpg",
             "address" => "Piazza Giuseppe Garibaldi 22, 56126 Pisa (PI)",
             "partita_iva" => "IT46469789712",
             "website" => "www.pizzeriafuoridizucca.it",
@@ -16,7 +16,7 @@ return [
         [
             "name" => "Tai Long Cucina Tipica Cinese",
             "email" => "tailong.chinaresturant@gmail.com",
-            "image" => "http://via.placeholder.com/640x360",
+            "image" => "img/Ristorante_Cinese.jpg",
             "address" => "Borgo Stretto 49, 56126 Pisa (PI)",
             "partita_iva" => "IT46469781111",
             "website" => "www.tailongchinaresturant.it",
@@ -28,7 +28,7 @@ return [
         [
             "name" => "SushiJay Japanese Cuisine",
             "email" => "suhijay@gmail.com",
-            "image" => "http://via.placeholder.com/640x360",
+            "image" => "img/Ristorante_Giapponese.jpg",
             "address" => "via Capponi 69, 56125 Pisa (PI)",
             "partita_iva" => "IT46469782222",
             "website" => "www.suhijay.it",
@@ -40,7 +40,7 @@ return [
         [
             "name" => "Old Wild West",
             "email" => "oldwildwest@gmail.com",
-            "image" => "http://via.placeholder.com/640x360",
+            "image" => "img/Ristorante_Americano.jpg",
             "address" => "Via di Gello 1, 56124 Pisa (PI)",
             "partita_iva" => "IT46469783333",
             "website" => "www.oldwildwest.it",
@@ -52,7 +52,7 @@ return [
         [
             "name" => "Sollacchero Pisano",
             "email" => "sollaccheropisano@gmail.com",
-            "image" => "http://via.placeholder.com/640x360",
+            "image" => "img/Ristorante_Italiano.jpg",
             "address" => "Corso Italia 171, 56123 Pisa (PI)",
             "partita_iva" => "IT46469784444",
             "website" => "www.sollaccheropisano.it",
@@ -64,7 +64,7 @@ return [
         [
             "name" => "Salsa di Peperon y Monton - Specialità iberiche",
             "email" => "salsadipeperonymonton@gmail.com",
-            "image" => "http://via.placeholder.com/640x360",
+            "image" => "img/Ristorante_Spagnolo.jpg",
             "address" => "Corso Francia 12, 56123 Pisa (PI)",
             "partita_iva" => "IT46469785555",
             "website" => "www.salsadipeperonymonton.it",
@@ -76,7 +76,7 @@ return [
         [
             "name" => "Avocados from Mexico",
             "email" => "avocadosfrommexico@gmail.com",
-            "image" => "http://via.placeholder.com/640x360",
+            "image" => "img/Ristorante_Messicano.jpg",
             "address" => "Piazza Vittorio Emanuele 119, 56129 Pisa (PI)",
             "partita_iva" => "IT46469786666",
             "website" => "www.avocadosfrommexico.it",
@@ -88,7 +88,7 @@ return [
         [
             "name" => "Ludhiana - Punjabi Traditional Cuisine",
             "email" => "punjabitraditionalcuisine@gmail.com",
-            "image" => "http://via.placeholder.com/640x360",
+            "image" => "img/Ristorante_Indiano.jpg",
             "address" => "Via Leonardo Fibonacci 30, 56123 Pisa (PI)",
             "partita_iva" => "IT46469787777",
             "website" => "www.punjabitraditionalcuisine.it",
@@ -100,7 +100,7 @@ return [
         [
             "name" => "Ankara - Turkish Traditional Cuisine",
             "email" => "ankaratraditionalcuisine@gmail.com",
-            "image" => "http://via.placeholder.com/640x360",
+            "image" => "img/Ristorante_Turco.jpg",
             "address" => "Via Giacomo Leopardi 64, 56123 Pisa (PI)",
             "partita_iva" => "IT46469788888",
             "website" => "www.ankaratraditionalcuisine.it",
@@ -112,7 +112,7 @@ return [
         [
             "name" => "Da Zorba il Greco",
             "email" => "zorbailgreco@gmail.com",
-            "image" => "http://via.placeholder.com/640x360",
+            "image" => "img/Ristorante_Greco.jpg",
             "address" => "Via Vittorio Veneto 44, 56121 Pisa (PI)",
             "partita_iva" => "IT46469780000",
             "website" => "www.zorbailgreco.it",
@@ -124,7 +124,7 @@ return [
         [
             "name" => "From Urals with Love",
             "email" => "fromuralswithlove@gmail.com",
-            "image" => "http://via.placeholder.com/640x360",
+            "image" => "img/Ristorante_Russo.jpg",
             "address" => "Via Vittorio Veneto 44, 56121 Pisa (PI)",
             "partita_iva" => "IT46469110000",
             "website" => "www.fromuralswithlove.it",
