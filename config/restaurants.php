@@ -184,14 +184,14 @@ return [
             "type_name" => "vegana",
             "type_imgPath" => "http://via.placeholder.com/640x360"
         ],
-        [
-            "type_name" => "vegetariana",
-            "type_imgPath" => "http://via.placeholder.com/640x360"
-        ],
-        [
-            "type_name" => "celiaca",
-            "type_imgPath" => "http://via.placeholder.com/640x360"
-        ],
+        // [
+        //     "type_name" => "vegetariana",
+        //     "type_imgPath" => "http://via.placeholder.com/640x360"
+        // ],
+        // [
+        //     "type_name" => "celiaca",
+        //     "type_imgPath" => "http://via.placeholder.com/640x360"
+        // ],
     ],
     "reviews" => [ 
         [
