@@ -61,7 +61,6 @@ return [
             "phone_number" => "3291832442",
             "type_id" => "5",
         ],
-
         [
             "name" => "Salsa di Peperon y Monton - Specialità iberiche",
             "email" => "salsadipeperonymonton@gmail.com",
@@ -137,23 +136,7 @@ return [
     ],
     "types" => [ 
         [
-            "type_name" => "greco",
-            "type_imgPath" => "http://via.placeholder.com/640x360"
-        ],
-        [
-            "type_name" => "russo",
-            "type_imgPath" => "http://via.placeholder.com/640x360"
-        ],
-        [
             "type_name" => "pizzeria",
-            "type_imgPath" => "http://via.placeholder.com/640x360"
-        ],
-        [
-            "type_name" => "italiano",
-            "type_imgPath" => "http://via.placeholder.com/640x360"
-        ],
-        [
-            "type_name" => "americano",
             "type_imgPath" => "http://via.placeholder.com/640x360"
         ],
         [
@@ -165,11 +148,19 @@ return [
             "type_imgPath" => "http://via.placeholder.com/640x360"
         ],
         [
+            "type_name" => "americano",
+            "type_imgPath" => "http://via.placeholder.com/640x360"
+        ],
+        [
+            "type_name" => "italiano",
+            "type_imgPath" => "http://via.placeholder.com/640x360"
+        ],
+        [
             "type_name" => "spagnolo",
             "type_imgPath" => "http://via.placeholder.com/640x360"
         ],
         [
-            "type_name" => "turco",
+            "type_name" => "messicano",
             "type_imgPath" => "http://via.placeholder.com/640x360"
         ],
         [
@@ -177,9 +168,18 @@ return [
             "type_imgPath" => "http://via.placeholder.com/640x360"
         ],
         [
-            "type_name" => "messicano",
+            "type_name" => "turco",
             "type_imgPath" => "http://via.placeholder.com/640x360"
         ],
+        [
+            "type_name" => "greco",
+            "type_imgPath" => "http://via.placeholder.com/640x360"
+        ],
+        [
+            "type_name" => "russo",
+            "type_imgPath" => "http://via.placeholder.com/640x360"
+        ],
+
         [
             "type_name" => "vegana",
             "type_imgPath" => "http://via.placeholder.com/640x360"
