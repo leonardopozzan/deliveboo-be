@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('addition_dish', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('addition_id')->cascadeOnDelete()->cascadeOnUpdate()->constrained();
-            $table->foreignId('dish_id')->cascadeOnDelete()->cascadeOnUpdate()->constrained();
+            $table->foreignId('addition_id')->constrained()->onUpdate('cascade')->onDelete('null');
+            $table->foreignId('dish_id')->constrained()->onUpdate('cascade')->onDelete('null');
+            // $table->foreignId('addition_id')->cascadeOnDelete()->cascadeOnUpdate()->constrained();
+            // $table->foreignId('dish_id')->cascadeOnDelete()->cascadeOnUpdate()->constrained();
         });
     }
 

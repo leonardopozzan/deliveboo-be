@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('resturants', function (Blueprint $table) {
+        Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100)->unique();
             $table->string('slug');
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->time('opening_hours');
             $table->time('closing_hours');
             $table->string('phone_number',10);
-            $table->foreignId('user_id')->cascadeOnUpdate()->cascadeOnDelete()->costrained();
+            $table->foreignId('user_id')->onUpdate('cascade')->onDelete('cascade')->constrained();
             $table->timestamps();
         });
     }
@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resturants');
+        Schema::dropIfExists('restaurants');
     }
 };

@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('dish_order', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('dish_id')->cascadeOnDelete()->cascadeOnUpdate()->constrained();
-            $table->foreignId('order_id')->cascadeOnDelete()->cascadeOnUpdate()->constrained();
+            $table->foreignId('dish_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('order_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreignId('dish_id')->cascadeOnDelete()->cascadeOnUpdate()->constrained();
+            // $table->foreignId('order_id')->cascadeOnDelete()->cascadeOnUpdate()->constrained();
             $table->tinyInteger('quantity')->unsigned();
             $table->float('current_price', 5, 2)->unsigned();
         });

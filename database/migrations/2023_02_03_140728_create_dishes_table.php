@@ -21,8 +21,10 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->boolean('visible');
             $table->text('ingredients');
-            $table->foreignId('restaurant_id')->cascadeOnUpdate()->cascadeOnDelete()->costrained();
-            $table->foreignId('category_id')->cascadeOnUpdate()->nullOnDelete()->costrained();
+            $table->foreignId('restaurant_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreignId('restaurant_id')->cascadeOnUpdate()->cascadeOnDelete()->costrained();
+            // $table->foreignId('category_id')->cascadeOnUpdate()->nullOnDelete()->costrained();
             $table->softDeletes();
             $table->timestamps();
         });
