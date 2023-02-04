@@ -7,6 +7,7 @@ use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class DashboardController extends Controller
 {
     public function index(){
@@ -14,7 +15,7 @@ class DashboardController extends Controller
             $dishes = Restaurant::all();
             return view('admin.dashboard', compact('dishes'));
         }else{
-            $restaurant= Auth::user()->restaurant;
+            $restaurant = Restaurant::find(Auth::user()->id);
             return view('admin.dashboard', compact('restaurant'));
         }
     }

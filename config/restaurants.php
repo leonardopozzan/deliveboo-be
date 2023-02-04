@@ -176,7 +176,7 @@ return [
             "type_imgPath" => "img/greco.jpg"
         ],
         [
-            "type_name" => "vegana",
+            "type_name" => "vegano",
             "type_imgPath" => "http://via.placeholder.com/640x360"
         ],
         // [

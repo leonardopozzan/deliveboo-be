@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Addition;
 use App\Http\Requests\StoreAdditionRequest;
 use App\Http\Requests\UpdateAdditionRequest;

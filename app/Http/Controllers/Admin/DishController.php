@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Dish;
 use App\Http\Requests\StoreDishRequest;
 use App\Http\Requests\UpdateDishRequest;
+use App\Models\Restaurant;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+
 
 class DishController extends Controller
 {
@@ -20,8 +23,8 @@ class DishController extends Controller
             $dishes = Dish::all();
             return view('admin.dishes.index', compact('dishes'));
         }else{
-            $restaurant_id= Auth::user()->restaurant->id;
-            $dishes = Dish::where('restaurant_id', $restaurant_id);
+            $restaurant = Restaurant::find(Auth::user()->id);
+            $dishes = $restaurant->dishes;
             return view('admin.dishes.index', compact('dishes'));
         }
     }
