@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DishController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +23,12 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    
+
+    Route::resource('dishes', DishController::class)->parameters(['dishs' => 'dish:slug']);
+    Route::resource('types', TypeController::class)->parameters(['types' => 'type:slug'])->except('show','create','edit');
+    Route::resource('categories', CategoryController::class)->parameters(['categories' => 'category:slug'])->except('show','create','edit');
+    Route::resource('orders', OrderController::class)->parameters(['orders' => 'order:slug'])->except('show','create','edit');
+    // Route::resource('tags', TagController::class)->parameters(['tags' => 'tag:slug'])->except('show','create','edit');
 });
 
 // Route::get('/dashboard', function () {
