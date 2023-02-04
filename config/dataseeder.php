@@ -223,7 +223,7 @@ return [
             "visible" => 1,
             "ingredients" => "acqua gassata (o acqua e anidride carbonica), zucchero (saccarosio o sciroppo di saccarosio o sciroppo di mais ad alto contenuto di fruttosio), caffeina, acido fosforico, colorante caramello (E150d), glicerina ed aromi naturali",
             "image" => "img/coca-cola.png",
-            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10],
+            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10,11],
             "category_id" => 12,
         ],
         [
@@ -232,7 +232,7 @@ return [
             "visible" => 1,
             "ingredients" => "acqua, succo di arancia (12%), zucchero, anidride carbonica, acidificante acido citrico, aromi naturali di agrumi, stabilizzante gomma d'acacia, antiossidante acido ascorbico.",
             "image" => "img/fanta.png",
-            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10],
+            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10,11],
             "category_id" => 12,
         ],
         [
@@ -241,7 +241,7 @@ return [
             "visible" => 1,
             "ingredients" => "acqua, zucchero, anidride carbonica, acidificante acido citrico, edulcoranti acesulfame K, aspartame e neoesperidina DC, correttore di acidità citrato trisodico, aromi naturali  ",
             "image" => "img/sprite.png",
-            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10],
+            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10,11],
             "category_id" => 12,
         ],
         [
@@ -250,7 +250,7 @@ return [
             "visible" => 1,
             "ingredients" => " acqua, zucchero, correttori di acidità: acido citrico e citrato di potassio, estratto di tè (0,1%), succo di limone (0,1%), antiossidanti: acido ascorbico, aromi naturali.",
             "image" => "img/he al limone.png",
-            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10],
+            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10,11],
             "category_id" => 12,
         ],
         [
@@ -259,7 +259,7 @@ return [
             "visible" => 1,
             "ingredients" => " acqua, zucchero, correttori di acidità: acido citrico e citrato di potassio, estratto di tè (0,1%), succo di pesca (0,1%), antiossidanti: acido ascorbico, aromi naturali.",
             "image" => "img/the alla pesca.png",
-            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10],
+            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10,11],
             "category_id" => 12,
         ],
         [
@@ -268,7 +268,7 @@ return [
             "visible" => 1,
             "ingredients" => "acqua, malto, lievito, luppolo",
             "image" => "img/birra.png",
-            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10],
+            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10,11],
             "category_id" => 12,
         ],
     ],
