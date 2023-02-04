@@ -1,6 +1,6 @@
 <?php
 return [
-    "resturants" => [
+    "restaurants" => [
         [
             "name" => "Pizzeria Fuori di Zucca",
             "email" => "pizzeriafuoridizucca@gmail.com",
