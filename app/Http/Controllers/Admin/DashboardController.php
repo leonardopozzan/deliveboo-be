@@ -16,7 +16,11 @@ class DashboardController extends Controller
             return view('admin.dashboard', compact('dishes'));
         }else{
             $restaurant = Restaurant::find(Auth::user()->id);
-            return view('admin.dashboard', compact('restaurant'));
+            if ($restaurant) {
+                return view('admin.dashboard', compact('restaurant'));
+            }else{
+                return view('admin.restaurants.create');
+            }
         }
     }
 }
