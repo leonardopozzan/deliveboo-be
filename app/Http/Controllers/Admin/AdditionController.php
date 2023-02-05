@@ -16,7 +16,7 @@ class AdditionController extends Controller
      */
     public function index()
     {
-        $addition = Addition::all();
+        $addition = Addition::paginate(10);
         return view('admin.additions.index', compact('addition'));
     }
 

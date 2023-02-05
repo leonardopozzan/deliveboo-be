@@ -20,11 +20,13 @@ class DishController extends Controller
     public function index()
     {
         if (Auth::user()->is_admin) {
-            $dishes = Dish::all();
+            $dishes = Dish::paginate(10);
             return view('admin.dishes.index', compact('dishes'));
         }else{
             $restaurant = Restaurant::find(Auth::user()->id);
-            $dishes = $restaurant->dishes;
+            $restaurant_id = $restaurant->id;
+
+            $dishes = Dish::where('restaurant_id', $restaurant_id)->paginate(10);
             return view('admin.dishes.index', compact('dishes'));
         }
     }

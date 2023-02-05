@@ -21,5 +21,6 @@
     </div>
 
     <h1>{{$restaurant->name}}</h1>
+    <div><img src="{{asset('/storage/' . $restaurant->image)}}" alt=""></div>
 </div>
 @endsection
