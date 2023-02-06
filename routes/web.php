@@ -25,7 +25,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('dishes', DishController::class)->parameters(['dishs' => 'dish:slug']);
+    Route::resource('dishes', DishController::class)->parameters(['dishes' => 'dish:slug']);
     Route::resource('types', TypeController::class)->parameters(['types' => 'type:slug'])->except('show','create','edit');
     Route::resource('categories', CategoryController::class)->parameters(['categories' => 'category:slug'])->except('show','create','edit');
     Route::resource('orders', OrderController::class)->parameters(['orders' => 'order:slug'])->except('show','create','edit');

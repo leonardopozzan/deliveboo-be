@@ -2,6 +2,7 @@
 @use './partials/mixins' as *;
 @import '~bootstrap/scss/bootstrap';
 @import './side-bar.scss';
+@import './show-dish.scss';
 
 *{
     padding: 0;
