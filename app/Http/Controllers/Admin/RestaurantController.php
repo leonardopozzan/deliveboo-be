@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Functions\Helpers;
 use App\Http\Requests\StoreRestaurantRequest;
 use App\Http\Requests\UpdateRestaurantRequest;
 use App\Models\Restaurant;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
 {
@@ -26,7 +29,7 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -37,7 +40,23 @@ class RestaurantController extends Controller
      */
     public function store(StoreRestaurantRequest $request)
     {
-        //
+        $data = $request->validated();
+        $data['slug'] = Helpers::generateSlug($data['name']);
+        $data['user_id'] = Auth::user()->id;
+        
+        if ($request->hasFile('image')) {
+            $path = Storage::putFile('img', $request->file('image'));
+            $data['image'] = $path;
+        }
+
+        $new_restaurant = Restaurant::create($data);
+
+        if ($request->has('types')) {
+            $new_restaurant->types()->attach($request->types);
+        }
+
+        return redirect()->route('admin.dashboard')->with('message', "$new_restaurant->name created successfully")->with('restaurant' , $new_restaurant);
+
     }
 
     /**

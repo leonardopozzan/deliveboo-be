@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,11 +16,12 @@ class DashboardController extends Controller
             $dishes = Restaurant::all();
             return view('admin.dashboard', compact('dishes'));
         }else{
-            $restaurant = Restaurant::find(Auth::user()->id);
+            $restaurant = Restaurant::where('user_id',Auth::user()->id)->first();
             if ($restaurant) {
                 return view('admin.dashboard', compact('restaurant'));
             }else{
-                return view('admin.restaurants.create');
+                $types = Type::all();
+                return view('admin.restaurants.create',compact('types'));
             }
         }
     }
