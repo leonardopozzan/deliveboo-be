@@ -1,26 +1,27 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+<body>
+    <div class="containery">
+        <div class="cardShow">
+            <div class="cardDescriptionShow p-5">
+                <p>Nome: {{$restaurant->name}}</p>
+                <p>Indirizzo: {{$restaurant->address}}</p>
+                <p>Email: {{$restaurant->email}}</p>
+                <p>Telefono: {{$restaurant->phone_number}}</p>
+                <p>Partita IVA: {{$restaurant->p_iva}}</p>
+                <p>Apertura: {{$restaurant->opening_hours}}</p>
+                <p>Chiusura: {{$restaurant->closing_hours}}</p>
+                <p>Sito Web: {{$restaurant->website}}</p>
 
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
+            </div>
+            <div class="cardImageShow">
+                <img src="{{asset('/storage/' . $restaurant->image)}}" alt="">
+            </div>
 
-                    {{ __('You are logged in!') }}
-                </div>
             </div>
         </div>
-    </div>
+    </div>  
+</body>
 
-    <h1>{{$restaurant->name}}</h1>
-    <div><img src="{{asset('/storage/' . $restaurant->image)}}" alt=""></div>
-</div>
 @endsection

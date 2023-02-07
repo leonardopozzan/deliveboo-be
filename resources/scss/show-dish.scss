@@ -1,8 +1,9 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
 
-
-.containerx{
+body{
+  background-color: #dddddd;
+  .containerx{
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -38,3 +39,4 @@
         font-weight: 700;
     }
   }
+}
