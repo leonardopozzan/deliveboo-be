@@ -30,7 +30,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     Route::resource('dishes', DishController::class)->parameters(['dishes' => 'dish:slug']);
     Route::resource('types', TypeController::class)->parameters(['types' => 'type:slug'])->except('show','create','edit');
     Route::resource('categories', CategoryController::class)->parameters(['categories' => 'category:slug'])->except('show','create','edit');
-    Route::resource('orders', OrderController::class)->parameters(['orders' => 'order:slug'])->except('show','create','edit');
+    Route::resource('orders', OrderController::class)->parameters(['orders' => 'order:code'])->except('create','edit');
     // Route::resource('tags', TagController::class)->parameters(['tags' => 'tag:slug'])->except('show','create','edit');
 });
 

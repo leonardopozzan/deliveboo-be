@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Order;
+use App\Models\Restaurant;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Http\Controllers\Controller;
@@ -17,7 +19,19 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('admin.orders.index');
+        $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
+        $dishes = $restaurant->dishes;
+        $orders = [];
+        foreach ($dishes as $dish) {
+            $all_orders = $dish->orders;
+            foreach ($all_orders as $order) {
+                if( ! in_array($order, $orders) ){
+                    array_push($orders, $order);
+                }
+            }
+        }
+        return view('admin.orders.index', compact('orders'));
+         
     }
 
     /**
