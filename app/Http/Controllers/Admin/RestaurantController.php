@@ -55,7 +55,7 @@ class RestaurantController extends Controller
             $new_restaurant->types()->attach($request->types);
         }
 
-        return redirect()->route('admin.dashboard')->with('message', "$new_restaurant->name created successfully")->with('restaurant' , $new_restaurant);
+        return redirect()->route('admin.dashboard')->with('message', "$new_restaurant->name creato con successo")->with('restaurant' , $new_restaurant);
 
     }
 
