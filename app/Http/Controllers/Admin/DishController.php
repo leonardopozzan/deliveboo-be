@@ -28,10 +28,13 @@ class DishController extends Controller
             $dishes = Dish::paginate(10);
             return view('admin.dishes.index', compact('dishes'));
         }else{
-            $restaurant_id = Restaurant::getRestaurantId(Auth::user()->id);
+            if(Auth::user()->restaurant){
+                $restaurant_id = Auth::user()->restaurant->id;;
 
-            $dishes = Dish::where('restaurant_id', $restaurant_id)->paginate(10);
-            return view('admin.dishes.index', compact('dishes'));
+                $dishes = Dish::where('restaurant_id', $restaurant_id)->paginate(10);
+                return view('admin.dishes.index', compact('dishes'));
+            }
+            abort(404);
         }
     }
 
@@ -42,6 +45,9 @@ class DishController extends Controller
      */
     public function create()
     {
+        if(!Auth::user()->restaurant){
+            abort(404);
+        }
         $categories = Category::all();
         return view('admin.dishes.create', compact('categories'));
     }
@@ -56,8 +62,7 @@ class DishController extends Controller
     public function store(StoreDishRequest $request)
     {
         $data = $request->validated();
-
-        $restaurant_id = Restaurant::getRestaurantId(Auth::user()->id);
+        $restaurant_id = Auth::user()->restaurant->id;
         $data['restaurant_id'] = $restaurant_id;
 
         $slug = Dish::getSlug($request->name, $restaurant_id);
@@ -80,9 +85,11 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
+        if(!Auth::user()->restaurant){
+            abort(404);
+        }
         //controllo che il ristoratore stia accedendo solo ai suoi piatti tramite l'id utente
-        $restaurant_id = Restaurant::getRestaurantId(Auth::user()->id);
-
+        $restaurant_id = Auth::user()->restaurant->id;
         if ($restaurant_id !== $dish->restaurant_id) {
             abort(403);
         }
@@ -97,9 +104,13 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        //controllo che il ristoratore stia accedendo solo ai suoi piatti tramite l'id utente
-        $restaurant_id = Restaurant::getRestaurantId(Auth::user()->id);
+        //controllo che il ristoratore abbia un ristorante
+        if(!Auth::user()->restaurant){
+            abort(404);
+        }
 
+        //controllo che il ristoratore stia accedendo solo ai suoi piatti tramite l'id utente
+        $restaurant_id = Auth::user()->restaurant->id;
         if ($restaurant_id !== $dish->restaurant_id) {
             abort(403);
         }
