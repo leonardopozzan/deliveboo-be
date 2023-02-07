@@ -43,6 +43,7 @@ class RestaurantController extends Controller
         $data = $request->validated();
         $data['slug'] = Helpers::generateSlug($data['name']);
         $data['user_id'] = Auth::user()->id;
+        
         if ($request->hasFile('image')) {
             $path = Storage::putFile('img', $request->file('image'));
             $data['image'] = $path;
