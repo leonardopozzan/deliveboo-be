@@ -21,15 +21,20 @@ class DishController extends Controller
      */
     public function index()
     {
+        //controllo che l'utente sia o no admin
+        //se admin gli restituisco tutti i piatti di tutto il sito 
+        //altrimenti restituisco i piatti del ristoratore che è loggata
         if (Auth::user()->is_admin) {
             $dishes = Dish::paginate(10);
             return view('admin.dishes.index', compact('dishes'));
         }else{
-            $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
-            $restaurant_id = $restaurant->id;
+            if(Auth::user()->restaurant){
+                $restaurant_id = Auth::user()->restaurant->id;;
 
-            $dishes = Dish::where('restaurant_id', $restaurant_id)->paginate(10);
-            return view('admin.dishes.index', compact('dishes'));
+                $dishes = Dish::where('restaurant_id', $restaurant_id)->paginate(10);
+                return view('admin.dishes.index', compact('dishes'));
+            }
+            abort(404);
         }
     }
 
@@ -40,6 +45,9 @@ class DishController extends Controller
      */
     public function create()
     {
+        if(!Auth::user()->restaurant){
+            abort(404);
+        }
         $categories = Category::all();
         return view('admin.dishes.create', compact('categories'));
     }
@@ -54,15 +62,11 @@ class DishController extends Controller
     public function store(StoreDishRequest $request)
     {
         $data = $request->validated();
-
-        $restaurant = Restaurant::find(Auth::user()->id);
-        $restaurant_id = $restaurant->id;
+        $restaurant_id = Auth::user()->restaurant->id;
+        $data['restaurant_id'] = $restaurant_id;
 
         $slug = Dish::getSlug($request->name, $restaurant_id);
         $data['slug'] = $slug;
-
-        $data['restaurant_id'] = $restaurant_id;
-
 
         if($request->hasFile('image')){
             $path = Storage::put('img', $request->image);
@@ -81,6 +85,14 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
+        if(!Auth::user()->restaurant){
+            abort(404);
+        }
+        //controllo che il ristoratore stia accedendo solo ai suoi piatti tramite l'id utente
+        $restaurant_id = Auth::user()->restaurant->id;
+        if ($restaurant_id !== $dish->restaurant_id) {
+            abort(403);
+        }
         return view('admin.dishes.show', compact('dish'));
     }
 
@@ -92,6 +104,17 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
+        //controllo che il ristoratore abbia un ristorante
+        if(!Auth::user()->restaurant){
+            abort(404);
+        }
+
+        //controllo che il ristoratore stia accedendo solo ai suoi piatti tramite l'id utente
+        $restaurant_id = Auth::user()->restaurant->id;
+        if ($restaurant_id !== $dish->restaurant_id) {
+            abort(403);
+        }
+
         $categories = Category::all();
         return view('admin.dishes.edit', compact('dish', 'categories'));
     }
@@ -116,7 +139,7 @@ class DishController extends Controller
 
         $dish->update($data);
 
-        return redirect()->route('admin.dishes.index')->with('message', "$dish->name updated successfully");
+        return redirect()->route('admin.dishes.index')->with('message', "$dish->name aggiornato con successo");
     }
 
     /**
@@ -128,6 +151,6 @@ class DishController extends Controller
     public function destroy(Dish $dish)
     {
         $dish->delete();
-        return redirect()->route('admin.dishes.index')->with('message', "$dish->name deleted successfully");
+        return redirect()->route('admin.dishes.index')->with('message', "$dish->name eliminato con successo");
     }
 }
