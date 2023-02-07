@@ -1,0 +1,40 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+
+
+.containerx{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    .cardShow {
+      width: 80%;
+      height: 500px;
+      margin: 0 auto;
+      display: flex;
+    }
+    
+    .cardImageShow{
+      height: 500px;
+      padding: 10px;
+      width: 100%;
+      background-color: #bbb;
+      
+      img{
+          padding-top: 20px;
+          width: 100%;
+          height: 460px;
+      }
+    }
+    .cardDescriptionShow{
+        height:500px;
+        padding-top: 30px;
+        line-height: 1.2;
+        font-size: 16px;
+        width: 100%;
+        padding: 10px;
+        background-color: #bbb;
+        color: black;
+        font-weight: 700;
+    }
+  }

@@ -6,8 +6,10 @@ use App\Models\Dish;
 use App\Http\Requests\StoreDishRequest;
 use App\Http\Requests\UpdateDishRequest;
 use App\Models\Restaurant;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 
 class DishController extends Controller
@@ -38,8 +40,10 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('admin.dishes.create', compact('categories'));
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -49,7 +53,24 @@ class DishController extends Controller
      */
     public function store(StoreDishRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        $restaurant = Restaurant::find(Auth::user()->id);
+        $restaurant_id = $restaurant->id;
+
+        $slug = Dish::getSlug($request->name, $restaurant_id);
+        $data['slug'] = $slug;
+
+        $data['restaurant_id'] = $restaurant_id;
+
+
+        if($request->hasFile('image')){
+            $path = Storage::put('img', $request->image);
+            $data['image'] = $path;
+        }
+
+        $new_dish = Dish::create($data);
+        return redirect()->route('admin.dishes.show', $new_dish->slug);
     }
 
     /**
@@ -60,7 +81,7 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        //
+        return view('admin.dishes.show', compact('dish'));
     }
 
     /**
@@ -71,7 +92,8 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        //
+        $categories = Category::all();
+        return view('admin.dishes.edit', compact('dish', 'categories'));
     }
 
     /**
@@ -83,7 +105,18 @@ class DishController extends Controller
      */
     public function update(UpdateDishRequest $request, Dish $dish)
     {
-        //
+        $data = $request->validated();
+        if ($request->hasFile('image')) {
+            if ($dish->image) {
+                Storage::delete($dish->image);
+            }
+            $path = Storage::put('img', $request->image);
+            $data['image'] = $path;
+        }
+
+        $dish->update($data);
+
+        return redirect()->route('admin.dishes.index')->with('message', "$dish->name updated successfully");
     }
 
     /**
@@ -94,6 +127,7 @@ class DishController extends Controller
      */
     public function destroy(Dish $dish)
     {
-        //
+        $dish->delete();
+        return redirect()->route('admin.dishes.index')->with('message', "$dish->name deleted successfully");
     }
 }

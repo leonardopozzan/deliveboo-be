@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+//use Illuminate\Validation\Rule;
 
 class UpdateDishRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class UpdateDishRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,11 @@ class UpdateDishRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:50|min:3',
+            'ingredients' => 'required',
+            'price' => 'required|numeric|between:0,999',
+            'category_id' => 'required', 'exists:categories,id',
+            'visible' => 'required',
         ];
     }
 }
