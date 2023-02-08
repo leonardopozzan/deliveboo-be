@@ -27,4 +27,18 @@ class Restaurant extends Model
         return $this->belongsTo(User::class);
     }
 
+    // public function orders()
+    // {
+    //     $dishes = $this->dishes;
+    //     $orders = [];
+    //     foreach ($dishes as $dish) {
+    //         $all_orders = $dish->orders;
+    //         foreach ($all_orders as $order) {
+    //             if( ! in_array($order, $orders) ){
+    //                 array_push($orders, $order);
+    //             }
+    //         }
+    //     }
+    //     return $orders;
+    // }
 }

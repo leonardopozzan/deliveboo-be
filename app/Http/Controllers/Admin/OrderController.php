@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Order;
+use App\Models\Restaurant;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Http\Controllers\Controller;
@@ -17,7 +19,13 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('admin.orders.index');
+        $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
+        $restaurant_id = $restaurant->id;
+        $orders = Order::whereHas( 'dishes', function ($query) use ($restaurant_id) {
+                $query->where('restaurant_id', $restaurant_id);
+            }
+        )->orderBy('date')->get();
+        return view('admin.orders.index', compact('orders'));
     }
 
     /**

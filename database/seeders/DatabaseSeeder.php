@@ -26,6 +26,9 @@ class DatabaseSeeder extends Seeder
            TypeSeeder::class,
            CategorySeeder::class,
            DishSeeder::class,
+           OrderSeeder::class,
+           DishOrderSeeder::class,
+           
         ]);
     }
 }
