@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class RestaurantController extends Controller
 {
     public function index(Request $request){
-        $restaurants = Restaurant::take(5)->get();
+        $restaurants = Restaurant::all();
         return response()->json([
             'success' => true,
             'results' => $restaurants,
