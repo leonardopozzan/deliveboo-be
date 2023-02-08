@@ -9,7 +9,7 @@
             {{ session()->get('message') }}
         </div>
         @endif
-        <a href="{{route('admin.dishes.create')}}" class="text-white"><button class="btn btn-primary mb-2"><i class="fa-solid fa-plus"></i></button></a>
+        <a href="{{route('admin.dishes.create')}}" class="text-white"><button class="btn btn-success mb-2"><i class="fa-solid fa-plus"></i></button></a>
         <table class="mb-2">
             <thead>
                 <tr>
