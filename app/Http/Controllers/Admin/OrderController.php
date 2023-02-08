@@ -20,18 +20,12 @@ class OrderController extends Controller
     public function index()
     {
         $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
-        $dishes = $restaurant->dishes;
-        $orders = [];
-        foreach ($dishes as $dish) {
-            $all_orders = $dish->orders;
-            foreach ($all_orders as $order) {
-                if( ! in_array($order, $orders) ){
-                    array_push($orders, $order);
-                }
+        $restaurant_id = $restaurant->id;
+        $orders = Order::whereHas( 'dishes', function ($query) use ($restaurant_id) {
+                $query->where('restaurant_id', $restaurant_id);
             }
-        }
+        )->get();
         return view('admin.orders.index', compact('orders'));
-         
     }
 
     /**
