@@ -14,11 +14,11 @@
             <thead>
                 <tr>
                     <th class="bl-hidden" scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th class="bl-hidden" scope="col">Price</th>
-                    <th class="bl-hidden" scope="col">Category</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
+                    <th scope="col">Nome</th>
+                    <th class="bl-hidden" scope="col">Prezzo</th>
+                    <th class="bl-hidden" scope="col">Categoria</th>
+                    <th scope="col">Modifica</th>
+                    <th scope="col">Cancella</th>
                 </tr>
             </thead>
             <tbody>

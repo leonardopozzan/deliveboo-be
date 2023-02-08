@@ -21,7 +21,22 @@
 
             </div>
         </div>
-    </div>  
+
+        <div class="containerInfoShow">
+            <div class="containerz">
+                <div class="cardInfoShow">
+                    <div class="cardOrderShow">
+                      <p>ULTIMI ORDINI EFFETTUATI</p>
+                    </div>
+                    <div class="cardGraphShow p-3">
+                        <p>GRAFICO</p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div> 
+    
+
 </body>
 
 @endsection

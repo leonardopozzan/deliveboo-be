@@ -134,7 +134,7 @@ return [
             "type_id" => [11],
         ],
     ],
-    "types" => [ 
+    "types" => [
         [
             "type_name" => "pizzeria",
             "type_imgPath" => "img/pizza.jpg"
@@ -177,7 +177,7 @@ return [
         ],
         [
             "type_name" => "vegano",
-            "type_imgPath" => "http://via.placeholder.com/640x360"
+            "type_imgPath" => "img/vegano.jpg"
         ],
         // [
         //     "type_name" => "vegetariana",
@@ -188,7 +188,7 @@ return [
         //     "type_imgPath" => "http://via.placeholder.com/640x360"
         // ],
     ],
-    "reviews" => [ 
+    "reviews" => [
         [
             "rev_name" => "Gioffre Ambrogetti",
             "rev_rating" => 9.0,
