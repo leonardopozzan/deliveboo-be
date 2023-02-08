@@ -1,26 +1,51 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
+<body>
+    <div class="containery">
+        <div class="cardShow">
+            <div class="cardDescriptionShow p-5">
+                <p>Nome: {{$restaurant->name}}</p>
+                <p>Indirizzo: {{$restaurant->address}}</p>
+                <p>Email: {{$restaurant->email}}</p>
+                <p>Telefono: {{$restaurant->phone_number}}</p>
+                <p>Partita IVA: {{$restaurant->p_iva}}</p>
+                <p>Apertura: {{$restaurant->opening_hours}}</p>
+                <p>Chiusura: {{$restaurant->closing_hours}}</p>
+                @if ($restaurant->website)
+                    <p>Sito Web: {{$restaurant->website}}</p>
+                @endif
+                <p>
+                    <span>Tipologia: </span>
+                    @foreach($restaurant->types as $type)
+                        <span> {{$type->name}}</span>
+                    @endforeach
+                </p>
+            </div>
+            <div class="cardImageShow">
+                @if ($restaurant->image)
+                    <img src="{{asset('/storage/' . $restaurant->image)}}" alt="">
+                @else
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                @endif
             </div>
         </div>
-    </div>
 
-    <h1>{{$restaurant->name}}</h1>
-    <div><img src="{{asset('/storage/' . $restaurant->image)}}" alt=""></div>
-</div>
+        <div class="containerInfoShow">
+            <div class="containerz">
+                <div class="cardInfoShow">
+                    <div class="cardOrderShow">
+                      <p>ULTIMI ORDINI EFFETTUATI</p>
+                    </div>
+                    <div class="cardGraphShow p-3">
+                        <p>GRAFICO</p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div> 
+    
+
+</body>
+
 @endsection

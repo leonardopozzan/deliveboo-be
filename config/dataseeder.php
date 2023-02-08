@@ -7,7 +7,7 @@ return [
             "visible" => 1,
             "ingredients" => "patatine, sale, olio di semi di arachide",
             "image" => "img/patatine fritte.png",
-            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10],
+            "restaurant_id" => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             "category_id" => 11,
         ],
         [
@@ -223,7 +223,7 @@ return [
             "visible" => 1,
             "ingredients" => "acqua gassata (o acqua e anidride carbonica), zucchero (saccarosio o sciroppo di saccarosio o sciroppo di mais ad alto contenuto di fruttosio), caffeina, acido fosforico, colorante caramello (E150d), glicerina ed aromi naturali",
             "image" => "img/coca-cola.png",
-            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10,11],
+            "restaurant_id" => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
             "category_id" => 12,
         ],
         [
@@ -232,7 +232,7 @@ return [
             "visible" => 1,
             "ingredients" => "acqua, succo di arancia (12%), zucchero, anidride carbonica, acidificante acido citrico, aromi naturali di agrumi, stabilizzante gomma d'acacia, antiossidante acido ascorbico.",
             "image" => "img/fanta.png",
-            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10,11],
+            "restaurant_id" => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
             "category_id" => 12,
         ],
         [
@@ -241,7 +241,7 @@ return [
             "visible" => 1,
             "ingredients" => "acqua, zucchero, anidride carbonica, acidificante acido citrico, edulcoranti acesulfame K, aspartame e neoesperidina DC, correttore di acidità citrato trisodico, aromi naturali  ",
             "image" => "img/sprite.png",
-            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10,11],
+            "restaurant_id" => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
             "category_id" => 12,
         ],
         [
@@ -250,7 +250,7 @@ return [
             "visible" => 1,
             "ingredients" => " acqua, zucchero, correttori di acidità: acido citrico e citrato di potassio, estratto di tè (0,1%), succo di limone (0,1%), antiossidanti: acido ascorbico, aromi naturali.",
             "image" => "img/te al limone.png",
-            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10,11],
+            "restaurant_id" => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
             "category_id" => 12,
         ],
         [
@@ -259,7 +259,7 @@ return [
             "visible" => 1,
             "ingredients" => " acqua, zucchero, correttori di acidità: acido citrico e citrato di potassio, estratto di tè (0,1%), succo di pesca (0,1%), antiossidanti: acido ascorbico, aromi naturali.",
             "image" => "img/te alla pesca.png",
-            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10,11],
+            "restaurant_id" => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
             "category_id" => 12,
         ],
         [
@@ -268,29 +268,78 @@ return [
             "visible" => 1,
             "ingredients" => "acqua, malto, lievito, luppolo",
             "image" => "img/birra.png",
-            "restaurant_id" => [1,2,3,4,5,6,7,8,9,10,11],
+            "restaurant_id" => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
             "category_id" => 12,
         ],
+        [
+            "name" => "poke vegano",
+            "price" => "12.80",
+            "visible" => 1,
+            "ingredients" => "avocado, fagioli atzuki, miglio, cetriolo, carote e zucchine alla julienne",
+            "image" => "img/poke.jpg",
+            "restaurant_id" => [11],
+            "category_id" => 2,
+        ],
+        [
+            "name" => "tofu",
+            "price" => "18.80",
+            "visible" => 1,
+            "ingredients" => "soia",
+            "image" => "img/tofu.png",
+            "restaurant_id" => [11],
+            "category_id" => 2,
+        ],
+        [
+            "name" => "kebab arrotolato",
+            "price" => "8.80",
+            "visible" => 1,
+            "ingredients" => "piadina, carne di agnello, salsa piccante, cipolla",
+            "image" => "img/kebab.jpg",
+            "restaurant_id" => [9],
+            "category_id" => 2,
+        ],
+        [
+            "name" => "falafel",
+            "price" => "6.50",
+            "visible" => 1,
+            "ingredients" => "ceci, aglio, cumino, cipolle, salsa allo yogurt",
+            "image" => "img/falafel.jpg",
+            "restaurant_id" => [9],
+            "category_id" => 2,
+        ],
     ],
-    "tags" =>[
+    "tags" => [
         'vegetarian',
         'vegan',
         'spicy',
         'gluten free',
     ],
     "categories" => [
-        "antipasto", //1
-        "primo",     //2
-        "carne",   //3
-        "pesce",   //4
-        "contorno",  //5
-        "dessert",   //6
-        "pizza",    //7
-        "hamburger", //8
-        "piadina",  //9
-        "kebab",  //10
-        "fritti",  //11
-        "bibite",   //12
-        "cocktail",   //13
+        "antipasto",
+        //1
+        "primo",
+        //2
+        "carne",
+        //3
+        "pesce",
+        //4
+        "contorno",
+        //5
+        "dessert",
+        //6
+        "pizza",
+        //7
+        "hamburger",
+        //8
+        "piadina",
+        //9
+        "kebab",
+        //10
+        "fritti",
+        //11
+        "bibite",
+        //12
+        "cocktail",
+        //13
     ],
 ];
