@@ -12,13 +12,22 @@
                 <p>Partita IVA: {{$restaurant->p_iva}}</p>
                 <p>Apertura: {{$restaurant->opening_hours}}</p>
                 <p>Chiusura: {{$restaurant->closing_hours}}</p>
-                <p>Sito Web: {{$restaurant->website}}</p>
-
+                @if ($restaurant->website)
+                    <p>Sito Web: {{$restaurant->website}}</p>
+                @endif
+                <p>
+                    <span>Tipologia: </span>
+                    @foreach($restaurant->types as $type)
+                        <span> {{$type->name}}</span>
+                    @endforeach
+                </p>
             </div>
             <div class="cardImageShow">
-                <img src="{{asset('/storage/' . $restaurant->image)}}" alt="">
-            </div>
-
+                @if ($restaurant->image)
+                    <img src="{{asset('/storage/' . $restaurant->image)}}" alt="">
+                @else
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                @endif
             </div>
         </div>
 

@@ -17,6 +17,7 @@
                     <th scope="col">Nome</th>
                     <th class="bl-hidden" scope="col">Prezzo</th>
                     <th class="bl-hidden" scope="col">Categoria</th>
+                    <th class="bl-hidden" scope="col">Visibile</th>
                     <th scope="col">Modifica</th>
                     <th scope="col">Cancella</th>
                 </tr>
@@ -28,6 +29,12 @@
                         <td><a href="{{route('admin.dishes.show', $dish->slug)}}" title="View dish">{{$dish->name}}</a></td>
                         <td class="bl-hidden">{{$dish->price}}&nbsp;&euro;</td>
                         <td class="bl-hidden">{{$dish->category->name}}</td>
+                        @if ($dish->visible)
+                            <td class="bl-hidden">SI</td>                       
+                        @else
+                            <td class="bl-hidden">NO</td>
+                        @endif
+                        
                         <td><a class="link-secondary" href="{{route('admin.dishes.edit', $dish->slug)}}" title="Edit dish"><i class="fa-solid fa-pen"></i></a></td>
                         <td>
                             <form action="{{route('admin.dishes.destroy', $dish->slug)}}" method="POST">

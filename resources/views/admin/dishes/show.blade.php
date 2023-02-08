@@ -10,7 +10,11 @@
 		<div class="containery">
 			<div class="cardShow">
 				<div class="cardImageShow">
-					<img src="{{asset('storage/' . $dish->image)}}" alt="">
+					@if ($dish->image)
+                    	<img src="{{asset('storage/' . $dish->image)}}" alt="">
+                	@else
+                    	<img src="https://via.placeholder.com/300x200" alt="">
+                	@endif
 				</div>
 				<div class="cardDescriptionShow p-3">
 					<p>Ingredienti : {{$dish->ingredients}}</p> 
