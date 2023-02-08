@@ -26,7 +26,7 @@
                 @foreach ($dishes as $dish)
                     <tr>
                         <th class="bl-hidden" scope="row">{{$dish->id}}</th>
-                        <td><a href="{{route('admin.dishes.show', $dish->slug)}}" title="View dish">{{$dish->name}}</a></td>
+                        <td><a href="{{route('admin.dishes.show', $dish->slug)}}" title="Guarda {{$dish->name}}">{{$dish->name}}</a></td>
                         <td class="bl-hidden">{{$dish->price}}&nbsp;&euro;</td>
                         <td class="bl-hidden">{{$dish->category->name}}</td>
                         @if ($dish->visible)
