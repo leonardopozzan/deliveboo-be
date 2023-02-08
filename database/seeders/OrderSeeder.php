@@ -25,7 +25,7 @@ class OrderSeeder extends Seeder
             $order->address = $faker->address();
             $order->phone_number = '3334658728';
             $order->email = $faker->email();
-            $order->date = $faker->date('Y/m/d');
+            $order->date = $faker->dateTimeThisYear('Y/m/d');;
             $order->total_price = $faker->randomFloat(2, 1, 100);
             $order->payment_status = $faker->boolean();
             //dd($order);

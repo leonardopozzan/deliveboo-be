@@ -28,6 +28,7 @@
                         <th scope="row">{{$order->id}}</th>
                         <td><a href="{{route('admin.orders.show', $order->code)}}" title="View order">{{$order->code}}</a></td>
                         <td>{{$order->total_price}}&nbsp;&euro;</td>
+                        <td>{{$order->date}}</td>
                         <td>{{$order->payment_status}}</td>
                         {{-- <td>
                             <form action="{{route('admin.dishes.destroy', $dish->slug)}}" method="POST">
