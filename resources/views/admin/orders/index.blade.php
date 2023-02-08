@@ -13,23 +13,32 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Codice Ordine</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Indirizzo</th>
-                    <th scope="col">Telefono</th>
                     <th scope="col">Email</th>
                     <th scope="col">Data ordine</th>
                     <th scope="col">Prezzo Totale</th>
+
                     <th scope="col">Status Pagamento</th>
+
+                    <th scope="col">Nome</th>
+                    <th scope="col">Telefono</th>
+
                 </tr>
             </thead>
             <tbody>
-                 @foreach ($orders as $order) 
+                @foreach ($orders as $order) 
                     <tr>
                         <th scope="row">{{$order->id}}</th>
                         <td><a href="{{route('admin.orders.show', $order->code)}}" title="View order">{{$order->code}}</a></td>
-                        <td>{{$order->total_price}}&nbsp;&euro;</td>
+                        <td>{{$order->email}}</td>
                         <td>{{$order->date}}</td>
-                        <td>{{$order->payment_status}}</td>
+                        <td>{{$order->total_price}}&nbsp;&euro;</td>
+                        @if ($order->payment_status)
+                            <td>Pagato</td>
+                        @else
+                            <td>Non Pagato</td>
+                        @endif
+                        <td>{{$order->name}}</td>
+                        <td>{{$order->phone_number}}</td>
                         {{-- <td>
                             <form action="{{route('admin.dishes.destroy', $dish->slug)}}" method="POST">
                             @csrf
