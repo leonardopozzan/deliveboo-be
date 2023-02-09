@@ -12,15 +12,13 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Codice Ordine</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Data ordine</th>
+                    <th scope="col">Codice</th>
+                    <th scope="col">Email Cliente</th>
+                    <th scope="col">Data Ricezione</th>
                     <th scope="col">Prezzo Totale</th>
-
                     <th scope="col">Status Pagamento</th>
-
-                    <th scope="col">Nome</th>
-                    <th scope="col">Telefono</th>
+                    <th scope="col">Nome Cliente</th>
+                    <th scope="col">Telefono Cliente</th>
 
                 </tr>
             </thead>
@@ -50,7 +48,7 @@
                 @endforeach
             </tbody>
         </table>
-        {{-- {{ $orders->links('vendor.pagination.bootstrap-5') }} --}}
+        {{ $orders->links('vendor.pagination.bootstrap-5') }}
         @include('partials.admin.modal')
     </div>
 </div>

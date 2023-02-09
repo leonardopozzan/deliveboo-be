@@ -20,7 +20,7 @@ class DishOrderSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $orders = Order::all();
+        $orders = Order::take(10)->get();
         $dishes = Dish::where('restaurant_id',1)->get();
         foreach($orders as $order) {
             foreach ($dishes as $dish) {
@@ -32,6 +32,7 @@ class DishOrderSeeder extends Seeder
                 ]);
             }
         }
+        $orders = Order::skip(10)->take(10)->get();
         $dishes = Dish::where('restaurant_id',2)->get();
         foreach($orders as $order) {
             foreach ($dishes as $dish) {
@@ -43,19 +44,9 @@ class DishOrderSeeder extends Seeder
                 ]);
             }
         }
+        $orders = Order::skip(20)->take(10)->get();
         $dishes = Dish::where('restaurant_id',3)->get();
-        foreach($orders as $order) {
-            foreach ($dishes as $dish) {
-                DB::table('dish_order')->insert([
-                    'dish_id' => $dish->id,
-                    'order_id' => $order->id,
-                    'quantity' => $faker->randomDigit(),
-                    'current_price' => $dish->price,
-                ]);
-            }
-        }
-        $dishes = Dish::where('restaurant_id',4)->get();
-        foreach($orders as $order) {
+        foreach ($orders as $order) {
             foreach ($dishes as $dish) {
                 DB::table('dish_order')->insert([
                     'dish_id' => $dish->id,
