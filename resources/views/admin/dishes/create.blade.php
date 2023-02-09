@@ -7,7 +7,7 @@
 
         <form action="{{route('admin.dishes.store')}}" method="POST" enctype="multipart/form-data" class="p-4">
             @csrf
-            <h1>Crea un nuovo piatto</h1>
+            <h1 class="mb-4">Crea un nuovo piatto</h1>
 
               {{-- Nome piatto --}}
               <div class="mb-3">
@@ -77,7 +77,8 @@
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
               </div>
-              
+              <div class="mb-4 mt-1">*campi obbligatori</div>
+
               <button type="submit" class="btn btn-primary">Inserisci</button>
               <button type="reset" id="reset" class="btn btn-danger text-white">Resetta</button>
         </form>

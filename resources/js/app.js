@@ -30,20 +30,34 @@ deleteSubmitButtons.forEach((button) => {
 });
 
 const previewImage = document.getElementById('create_cover_image');
-previewImage.addEventListener('change', (event) =>{
-    var oFReader = new FileReader();
-    // var image  =  previewImage.files[0];
-    // console.log(image);
-    oFReader.readAsDataURL(previewImage.files[0]);
+if(previewImage){
+    previewImage.addEventListener('change', (event) =>{
+        var oFReader = new FileReader();
+        // var image  =  previewImage.files[0];
+        // console.log(image);
+        oFReader.readAsDataURL(previewImage.files[0]);
+    
+        oFReader.onload = function (oFREvent) {
+            //console.log(oFREvent);
+            document.getElementById("uploadPreview").src = oFREvent.target.result;
+        };
+    
+        let button = document.getElementById('reset')
+    
+        if(button){
+            button.addEventListener('click', function(){
+                document.getElementById("uploadPreview").src = 'https://via.placeholder.com/300x200';
+            })
+        }
+        
+    
+        let buttonEditDish = document.getElementById('resetEdit')
+        if(buttonEditDish){
+            buttonEditDish.addEventListener('click', function(){
+                document.getElementById("uploadPreview").src = document.getElementById("backupImage").src;
+            })
+        }
+       
+    });
 
-    oFReader.onload = function (oFREvent) {
-        //console.log(oFREvent);
-        document.getElementById("uploadPreview").src = oFREvent.target.result;
-    };
-
-    let button = document.getElementsById('reset')
-
-    button.addEventListener('click', function(){
-        document.getElementById("uploadPreview").src = 'https://via.placeholder.com/300x200';
-    })
-});
+}

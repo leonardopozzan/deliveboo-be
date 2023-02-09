@@ -71,6 +71,7 @@
             <div class="mb-3">
                 @if ($dish->image)
                     <img id="uploadPreview" class="mb-2" width="100" src="{{asset( 'storage/' . $dish->image)}}">
+                    <img id="backupImage" class="d-none" width="100" src="{{asset( 'storage/' . $dish->image)}}">
                 @else
                     <img id="uploadPreview" class="mb-2" width="100" src="https://via.placeholder.com/300x200">
                 @endif
@@ -83,7 +84,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Inserisci</button>
-            <button type="reset" class="btn btn-danger text-white" >Resetta</button>
+            <button type="reset" id="resetEdit" class="btn btn-danger text-white" >Resetta</button>
         </form>
     </div>
 </div>

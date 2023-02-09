@@ -1,8 +1,9 @@
 @extends('layouts.admin')
 @section('content')
 <section class="container my-5" id="create-restaurant">
+        <div class="row bg-white p-4" id="form">
     <h1 class="mb-4">Crea il tuo ristorante</h1>
-        <div class="row bg-white p-4">
+
             <div class="col-12">
                 <form action="{{ route('admin.restaurants.store') }}" method="POST" enctype="multipart/form-data" class="form-crud">
                     @csrf
@@ -13,6 +14,7 @@
                         @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
+                        <div class="form-text">* Minimo 3 caratteri e massimo 100 caratteri</div>
                     </div>
                     {{-- Email Ristorante --}}
                     <div class="mb-3">
@@ -29,6 +31,7 @@
                         @error('p_iva')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
+                        <div class="form-text">* Formato es. IT55555555555</div>
                     </div>
                     {{-- Indirizzo Ristorante --}}
                     <div class="mb-3">
@@ -37,6 +40,7 @@
                         @error('address')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
+                        <div class="form-text">* Via, CAP, Città e Provincia</div>
                     </div>
                     {{-- Numero di telefono del Ristorante --}}
                     <div class="mb-3">
@@ -89,7 +93,8 @@
                         @enderror
                     </div>
                     {{-- Immagine Ristorante --}}
-                    <div >
+                    <div class="mb-3">
+                        <img id="uploadPreview" class="mb-2" width="100" src="https://via.placeholder.com/300x200">
                         <label for="image" class="form-label">Immagine</label>
                         <input type="file" name="image" id="create_cover_image" class="form-control  @error('image') is-invalid @enderror">
                         @error('image')
@@ -97,8 +102,8 @@
                         @enderror
                     </div>
                     <div class="mb-4 mt-1">*campi obbligatori</div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="reset" class="btn btn-danger">Reset</button>
+                    <button type="submit" class="btn btn-primary">Inserisci</button>
+                    <button type="reset" id="reset" class="btn btn-danger text-white">Resetta</button>
                 </form>
             </div>
         </div>
