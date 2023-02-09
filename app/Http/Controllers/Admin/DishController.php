@@ -86,12 +86,12 @@ class DishController extends Controller
     public function show(Dish $dish)
     {
         if(!Auth::user()->restaurant){
-            abort(404);
+            abort(404, 'Non hai ancora un ristorante');
         }
         //controllo che il ristoratore stia accedendo solo ai suoi piatti tramite l'id utente
         $restaurant_id = Auth::user()->restaurant->id;
         if ($restaurant_id !== $dish->restaurant_id) {
-            abort(403);
+            abort(404, '$Non sei autorizzato per accedere');
         }
         return view('admin.dishes.show', compact('dish'));
     }
