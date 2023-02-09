@@ -136,7 +136,7 @@ return [
     ],
     "types" => [
         [
-            "type_name" => "pizza",
+            "type_name" => "pizzeria",
             "type_imgPath" => "img/pizza.jpg"
         ],
         [

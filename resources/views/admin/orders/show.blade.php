@@ -19,7 +19,7 @@
       <div class="p-1"><span class="fw-bold">Email:</span> {{$order->email}}</div>
     </div>
   </div>
-  <table class="mt-5">
+  <table class="my-5">
     <thead>
         <tr>
             <th scope="col">Nome</th>
