@@ -37,10 +37,10 @@
             <div class="containerz">
                 <div class="cardInfoShow">
                     <div class="cardOrderShow">
-                      <p>ULTIMI ORDINI EFFETTUATI</p>
+                      <p class="text-capitalize">ultimi ordini effettuati </p>
                     </div>
                     <div class="cardGraphShow p-3">
-                        <p>GRAFICO</p>
+                        <p>?Grafico da implementare per gli ordini</p>
                     </div>
                 </div>
             </div>

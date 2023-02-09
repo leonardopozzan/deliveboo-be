@@ -16,7 +16,7 @@
                         @endif
                     </div>
                     <div class="cardDescriptionShow p-3 ps-5 ms-5">
-                        <p>Ingredienti : <span class="text-capitalize">{{ $dish->ingredients }} </span></p>
+                        <p>Ingredienti : <span class="text-capitalize"> <em>{{ $dish->ingredients }}</em> </span></p>
                         <p>Prezzo : {{ $dish->price }} €</p>
                         @if ($dish->category)
                             <p>Categoria : <span class="text-capitalize">{{ $dish->category->name }}</span></p>
