@@ -139,7 +139,7 @@ class DishController extends Controller
 
         $dish->update($data);
 
-        return redirect()->route('admin.dishes.index')->with('message', "$dish->name aggiornato con successo");
+        return redirect()->route('admin.dishes.show', $dish->slug)->with('message', "$dish->name aggiornato con successo");
     }
 
     /**

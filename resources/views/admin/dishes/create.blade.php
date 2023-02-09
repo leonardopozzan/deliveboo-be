@@ -2,12 +2,12 @@
 @section('content')
 
 
-<div class="d-flex bg-white">
+<div id="form" class="d-flex bg-white">
     <div class="col-12">
 
         <form action="{{route('admin.dishes.store')}}" method="POST" enctype="multipart/form-data" class="p-4">
             @csrf
-            <h1>Crea nuovo piatto</h1>
+            <h1>Crea un nuovo piatto</h1>
 
               {{-- Nome piatto --}}
               <div class="mb-3">
@@ -54,27 +54,32 @@
             
 
               {{-- Visibilità Piatto --}}
-              <div class="mb-3">
+              <div class="mb-4">
                 <div><label class="form-label text-capitalize">visibilità <span>*</span></label></div>
-                <input type="radio" id="visible" name="visible" value="1" required checked/>
-                <label for="visible">Visibile</label>
-            
-                <input type="radio" id="visible" name="visible" value="0" required />
-                <label for="visible">Non Visibile</label>
+                <div class="d-flex">
+                  <div class="me-3">
+                    <input type="radio" id="visible" name="visible" value="1" required checked/>
+                    <label for="visible">Visibile</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="visible" name="visible" value="0" required />
+                    <label for="visible">Non Visibile</label>
+                  </div>
+                </div>
               </div>
 
               {{-- Immagine piatto--}}
               <div class="mb-3">
                 <img id="uploadPreview" class="mb-2" width="100" src="https://via.placeholder.com/300x200">
                 <label for="create_image" class="form-label">Immagine</label>
-                <input type="file" name="image" id="image" class="form-control  @error('image') is-invalid @enderror">
+                <input type="file" name="image" id="create_cover_image"  class="form-control  @error('image') is-invalid @enderror">
                 @error('image')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
               </div>
               
-              <button type="submit" class="btn btn-success">Inserisci</button>
-              <button type="reset" class="btn btn-danger text-white">Resetta</button>
+              <button type="submit" class="btn btn-primary">Inserisci</button>
+              <button type="reset" id="reset" class="btn btn-danger text-white">Resetta</button>
         </form>
     </div>
 </div>
