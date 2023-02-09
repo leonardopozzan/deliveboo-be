@@ -1,6 +1,6 @@
 <div class="side-bar">
     <ul>
-        <li class="title"><a href="{{ url('admin') }}"><i class="fa-solid fa-chart-line"></i><div>Dashboard</div></a></li>
+        <li class="title"><a href="{{ url('admin') }}"><img src="/dish-drp-bw-01.png" alt="logo dishdrop"></a></li>
         @if(Auth::user()->restaurant)
         <li><a href="{{route('admin.dishes.index')}}"><i class="fa-solid fa-atom"></i><div>Tutti i Piatti</div></a></li>
         <li><a href="{{route('admin.orders.index')}}"><i class="fa-solid fa-diagram-project"></i><div>Tutti gli Ordini</div></a></li>

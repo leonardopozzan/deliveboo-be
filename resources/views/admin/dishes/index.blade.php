@@ -9,7 +9,7 @@
             {{ session()->get('message') }}
         </div>
         @endif
-        <a href="{{route('admin.dishes.create')}}" class="text-white"><button class="btn btn-primary mb-2"><i class="fa-solid fa-plus"></i></button></a>
+        <a href="{{route('admin.dishes.create')}}" class="text-white"><button class="btn btn-success mb-2"><i class="fa-solid fa-plus"></i></button></a>
         <table class="mb-2">
             <thead>
                 <tr>
@@ -26,7 +26,7 @@
                 @foreach ($dishes as $dish)
                     <tr>
                         <th class="bl-hidden" scope="row">{{$dish->id}}</th>
-                        <td><a href="{{route('admin.dishes.show', $dish->slug)}}" title="View dish">{{$dish->name}}</a></td>
+                        <td><a href="{{route('admin.dishes.show', $dish->slug)}}" title="Guarda {{$dish->name}}">{{$dish->name}}</a></td>
                         <td class="bl-hidden">{{$dish->price}}&nbsp;&euro;</td>
                         <td class="bl-hidden">{{$dish->category->name}}</td>
                         @if ($dish->visible)
