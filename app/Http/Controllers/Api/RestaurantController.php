@@ -11,7 +11,19 @@ use Illuminate\Http\Request;
 class RestaurantController extends Controller
 {
     public function index(Request $request){
-        $restaurants = Restaurant::all();
+
+        $type_filter = $request->query('typeFilter');
+
+
+        $restaurants = Restaurant::when(!empty($type_filter), function ($q) use ($type_filter) {
+            $q->whereHas(
+                'types',
+                function ($q) use ($type_filter) {
+                    $q->where('type_id', $type_filter);
+                }
+            );
+        })->with('types')->get();
+        
         return response()->json([
             'success' => true,
             'results' => $restaurants,
