@@ -1,0 +1,19 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+
+#order-show{
+    width: 80%;
+    margin: auto;
+    background-color: $white;
+    border-radius: 50px;
+    margin-top: 80px;
+    padding: 2rem;
+    table{
+        width: 70%;
+        margin: auto;
+    }
+    .price{
+        color: red;
+        font-size: 1.3rem;
+    }
+}

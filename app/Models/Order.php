@@ -15,6 +15,6 @@ class Order extends Model
 
     public function dishes(): BelongsToMany
     {
-        return $this->belongsToMany(Dish::class);
+        return $this->belongsToMany(Dish::class)->withPivot('quantity', 'current_price');
     }
 }

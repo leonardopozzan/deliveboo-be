@@ -19,12 +19,15 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
-        $restaurant_id = $restaurant->id;
+        //controllo che l'utente abbia un ristorante
+        if(!Auth::user()->restaurant){
+            abort(404);
+        }
+        $restaurant_id = Auth::user()->restaurant->id;
         $orders = Order::whereHas( 'dishes', function ($query) use ($restaurant_id) {
                 $query->where('restaurant_id', $restaurant_id);
             }
-        )->orderBy('date')->get();
+        )->orderBy('date', 'DESC')->paginate(10);
         return view('admin.orders.index', compact('orders'));
     }
 
@@ -57,7 +60,17 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        //controllo che l'utente abbia un ristorante
+        if(!Auth::user()->restaurant){
+            abort(404);
+        }
+        //controllo che il ristoratore stia accedendo solo ai suoi piatti tramite l'id utente
+        $restaurant_id = Auth::user()->restaurant->id;
+        $dish = $order->dishes()->first();
+        if ($restaurant_id !== $dish->restaurant_id) {
+            abort(403);
+        }
+        return view('admin.orders.show', compact('order'));
     }
 
     /**
