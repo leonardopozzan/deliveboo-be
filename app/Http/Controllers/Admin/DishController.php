@@ -91,7 +91,7 @@ class DishController extends Controller
         //controllo che il ristoratore stia accedendo solo ai suoi piatti tramite l'id utente
         $restaurant_id = Auth::user()->restaurant->id;
         if ($restaurant_id !== $dish->restaurant_id) {
-            abort(404, '$Non sei autorizzato per accedere');
+            abort(403, '$Non sei autorizzato ad accedere');
         }
         return view('admin.dishes.show', compact('dish'));
     }
@@ -112,7 +112,7 @@ class DishController extends Controller
         //controllo che il ristoratore stia accedendo solo ai suoi piatti tramite l'id utente
         $restaurant_id = Auth::user()->restaurant->id;
         if ($restaurant_id !== $dish->restaurant_id) {
-            abort(404, '$Non sei autorizzato per accedere');
+            abort(403, '$Non sei autorizzato ad accedere');
         }
 
         $categories = Category::all();

@@ -68,7 +68,7 @@ class OrderController extends Controller
         $restaurant_id = Auth::user()->restaurant->id;
         $dish = $order->dishes()->first();
         if ($restaurant_id !== $dish->restaurant_id) {
-            abort(404, '$Non sei autorizzato per accedere');
+            abort(403, '$Non sei autorizzato ad accedere');
         }
         return view('admin.orders.show', compact('order'));
     }
