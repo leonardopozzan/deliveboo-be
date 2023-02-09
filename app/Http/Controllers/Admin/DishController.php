@@ -34,7 +34,7 @@ class DishController extends Controller
                 $dishes = Dish::where('restaurant_id', $restaurant_id)->paginate(10);
                 return view('admin.dishes.index', compact('dishes'));
             }
-            abort(404);
+            abort(404, '$Non hai ancora un Ristorante');
         }
     }
 
@@ -46,7 +46,7 @@ class DishController extends Controller
     public function create()
     {
         if(!Auth::user()->restaurant){
-            abort(404);
+            abort(404, '$Non hai ancora un Ristorante');
         }
         $categories = Category::all();
         return view('admin.dishes.create', compact('categories'));
@@ -86,7 +86,7 @@ class DishController extends Controller
     public function show(Dish $dish)
     {
         if(!Auth::user()->restaurant){
-            abort(404, 'Non hai ancora un ristorante');
+            abort(404, '$Non hai ancora un ristorante');
         }
         //controllo che il ristoratore stia accedendo solo ai suoi piatti tramite l'id utente
         $restaurant_id = Auth::user()->restaurant->id;
@@ -106,13 +106,13 @@ class DishController extends Controller
     {
         //controllo che il ristoratore abbia un ristorante
         if(!Auth::user()->restaurant){
-            abort(404);
+            abort(404, '$Non hai ancora un Ristorante');
         }
 
         //controllo che il ristoratore stia accedendo solo ai suoi piatti tramite l'id utente
         $restaurant_id = Auth::user()->restaurant->id;
         if ($restaurant_id !== $dish->restaurant_id) {
-            abort(403);
+            abort(404, '$Non sei autorizzato per accedere');
         }
 
         $categories = Category::all();
