@@ -5,7 +5,7 @@
       <!-- Right links -->
       <ul class="navbar-nav ms-auto d-flex flex-row align-items-center">
         <li class="nav-item me-2">
-          @if (Auth::user()->restaurant)
+          @if (Auth::user()->restaurant && Auth::user()->restaurant->image)
           <img class="my-img" src="{{asset('storage/' . Auth::user()->restaurant->image)}}">
           @endif
       </li>

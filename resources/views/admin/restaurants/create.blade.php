@@ -2,7 +2,7 @@
 @section('content')
 <section class="container my-5" id="create-restaurant">
     <h1 class="mb-4">Crea il tuo ristorante</h1>
-        <div class="row bg-white">
+        <div class="row bg-white p-4">
             <div class="col-12">
                 <form action="{{ route('admin.restaurants.store') }}" method="POST" enctype="multipart/form-data" class="form-crud">
                     @csrf
