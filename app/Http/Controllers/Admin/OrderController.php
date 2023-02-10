@@ -21,7 +21,7 @@ class OrderController extends Controller
     {
         //controllo che l'utente abbia un ristorante
         if(!Auth::user()->restaurant){
-            abort(404);
+            abort(404, '$Non hai ancora un Ristorante');
         }
         $restaurant_id = Auth::user()->restaurant->id;
         $orders = Order::whereHas( 'dishes', function ($query) use ($restaurant_id) {
@@ -62,13 +62,13 @@ class OrderController extends Controller
     {
         //controllo che l'utente abbia un ristorante
         if(!Auth::user()->restaurant){
-            abort(404);
+            abort(404, '$Non hai ancora un Ristorante');
         }
         //controllo che il ristoratore stia accedendo solo ai suoi piatti tramite l'id utente
         $restaurant_id = Auth::user()->restaurant->id;
         $dish = $order->dishes()->first();
         if ($restaurant_id !== $dish->restaurant_id) {
-            abort(403);
+            abort(403, '$Non sei autorizzato ad accedere');
         }
         return view('admin.orders.show', compact('order'));
     }
