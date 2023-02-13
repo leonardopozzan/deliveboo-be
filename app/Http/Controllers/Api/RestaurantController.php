@@ -31,11 +31,13 @@ class RestaurantController extends Controller
     }
 
     public function show($slug){
-        $restaurant = Restaurant::where('slug',$slug)->with('dishes')->with('types')->first();
+        $restaurant = Restaurant::where('slug',$slug)->with('types')->with('dishes.category')->with('dishes', function($q){
+            $q->orderBy('category_id');
+        })->first();
         if($restaurant){
             return response()->json([
                 'success' => true,
-                'results' => $restaurant
+                'results' => $restaurant,
             ]);
         }else{
             return response()->json([
