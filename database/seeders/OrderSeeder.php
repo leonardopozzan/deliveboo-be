@@ -20,7 +20,7 @@ class OrderSeeder extends Seeder
         //ordini creati con faker.
         for ($i = 0; $i < 30; $i++) {
             $order = new Order;
-            $order->code = $faker->regexify('[A-Z]{5}[0-9]{5}');
+            $order->code = $faker->regexify('[A-Z]{6}[0-9]{6}');
             $order->name = $faker->name();
             $order->address = $faker->address();
             $order->phone_number = '3334658728';
