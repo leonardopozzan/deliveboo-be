@@ -5,21 +5,27 @@
 @import './show-dish.scss';
 @import './show-restaurant.scss';
 @import './order-show.scss';
+@import './home-page.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
-*{
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-ul{
+
+ul {
     list-style: none;
 }
-a{
+
+a {
     text-decoration: none;
 }
-img{
+
+img {
     max-width: 100%;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -27,55 +33,69 @@ table {
     font-family: sans-serif;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
     thead tr {
         background-color: $red;
         color: $white;
         text-align: left;
     }
-    th,td {
+
+    th,
+    td {
         padding: 12px 15px;
     }
+
     tbody tr {
         border-bottom: 1px solid $border-grey;
     }
+
     tbody tr:nth-of-type(even) {
         background-color: $light-grey;
     }
+
     tbody tr:last-of-type {
         border-bottom: 2px solid $red;
     }
+
     tbody tr.active-row {
         font-weight: bold;
         color: $red;
     }
-    button{
+
+    button {
         color: $white;
     }
 }
-#table-list{
+
+#table-list {
     margin-top: 50px;
-    .table-container{
+
+    .table-container {
         width: 90%;
         margin: auto;
         padding-bottom: 100px;
     }
 }
-#main-navbar{
-    .my-img{
+
+#main-navbar {
+    .my-img {
         width: 50px;
         height: 50px;
         border-radius: 50%;
         overflow: hidden;
-        img{
+
+        img {
             width: 100%;
             height: 100%;
         }
     }
 }
-body{
+
+body {
     font-family: 'Roboto', sans-serif;
 }
-#form{
+
+#form {
     width: 80%;
     margin: 50px auto;
     border-radius: 20px;

@@ -1,0 +1,21 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+
+.jumbotron {
+    .container {
+        .logo-description-rider {
+            .logo-double-descpition {
+                .logo-description {
+
+                    .logo-dishdrop {
+                        width: calc(100% / 2);
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
