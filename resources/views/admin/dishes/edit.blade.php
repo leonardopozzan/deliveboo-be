@@ -83,7 +83,7 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">Inserisci</button>
+            <button type="submit" class="btn btn-primary">Aggiorna</button>
             <button type="reset" id="resetEdit" class="btn btn-danger text-white" >Resetta</button>
         </form>
     </div>
