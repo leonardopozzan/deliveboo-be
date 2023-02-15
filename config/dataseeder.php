@@ -366,7 +366,7 @@ return [
             "price" => "11.00",
             "visible" => 1,
             "ingredients" => "formaggio fresco spalmabile, confettura di frutti di bosco, zucchero, amido di mais, scorza di limone, uova, panna acida, succo di limone, biscotti digestive, burro, sale",
-            "image" => "img/cheesecake.jpg",
+            "image" => "img/cheescake.jpg",
             "restaurant_id" => [4],
             "category_id" => 2,
         ],
