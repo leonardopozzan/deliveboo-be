@@ -1,6 +1,8 @@
 <?php
 
+
 use App\Http\Controllers\Api\CartController;
+use App\Http\Controllers\Api\LeadController;
 use App\Http\Controllers\Api\RestaurantController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,3 +31,6 @@ Route::post('purchase', [CartController::class, 'purchase']);
 
 Route::get('order', [CartController::class, 'generate']);
 Route::post('order/payment' , [CartController::class, 'makePayment']);
+
+Route::post('/contacts', [LeadController::class, 'store']);
+
