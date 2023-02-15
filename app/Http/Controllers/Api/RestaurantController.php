@@ -10,52 +10,54 @@ use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
 {
-    public function index(Request $request){
+    public function index(Request $request)
+    {
 
         $type_filter = $request->query('typeFilter');
-
 
         $restaurants = Restaurant::when(!empty($type_filter), function ($q) use ($type_filter) {
             $q->whereHas(
                 'types',
                 function ($q) use ($type_filter) {
-                    $q->where('type_id', $type_filter);
+                    $q->whereIn('types.slug', $type_filter);
                 }
             );
         })->with('types')->get();
-        
+
         return response()->json([
             'success' => true,
             'results' => $restaurants,
         ]);
     }
 
-    public function show($slug){
-        $restaurant = Restaurant::where('slug',$slug)->with('types')->with('dishes.category')->with('dishes', function($q){
+    public function show($slug)
+    {
+        $restaurant = Restaurant::where('slug', $slug)->with('types')->with('dishes.category')->with('dishes', function ($q) {
             $q->orderBy('category_id');
         })->first();
-        if($restaurant){
+        if ($restaurant) {
             return response()->json([
                 'success' => true,
                 'results' => $restaurant,
             ]);
-        }else{
+        } else {
             return response()->json([
                 'success' => false,
                 'results' => 'Non hai trovato nessun prodotto'
             ]);
         }
-        
     }
 
-    public function types(){
+    public function types()
+    {
         $types = Type::all();
         return response()->json([
             'success' => true,
             'types' => $types,
         ]);
     }
-    public function categories(){
+    public function categories()
+    {
         $categories = Category::all();
         return response()->json([
             'success' => true,
