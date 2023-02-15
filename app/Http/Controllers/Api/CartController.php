@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\OrderPaymentRequest;
+use App\Models\Dish;
 use App\Models\Order;
+use Braintree\Gateway;
 use Illuminate\Http\Request;
 use Faker\Generator as Faker;
 
@@ -22,7 +25,7 @@ class CartController extends Controller
         $new_order->phone_number = $request->phoneNumber;
         $new_order->date = today();
         $new_order->total_price = $request->totalPrice;
-        $new_order->payment_status = true;
+        $new_order->payment_status = $request->paymentStatus == 'true';
         $new_order->save();
 
         $list_item = [];
@@ -39,4 +42,40 @@ class CartController extends Controller
             'order' => $new_order
         ]);
     }
+
+    public function makePayment(Request $request, Gateway $gateway){
+
+        $result = $gateway->transaction()->sale([
+            'amount' =>  $request->amount,
+            'paymentMethodNonce' => $request->payment_method_nonce,
+            'options' => [
+            'submitForSettlement' => true
+            ]
+        ]);
+
+        if($result->success){
+            $data = [
+                'success' => true,
+                'message' => 'transazione eseguita'
+                ];
+                return response()->json($data);
+            } else{
+            $data = [
+            'success' => false,
+                'message' => 'transazione fallita'
+            ];
+            return response()->json($data);
+            }
+            
+    }
+
+    public function generate(Gateway $gateway){
+        $token = $gateway->clientToken()->generate();
+        $data = [
+            'success' => true,
+        	'token' => $token
+        ];
+        return response()->json($data);
+        
+        }
 }

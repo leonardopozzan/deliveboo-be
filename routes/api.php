@@ -26,3 +26,6 @@ Route::get('categories', [RestaurantController::class, 'categories']);
 Route::get('types', [RestaurantController::class, 'types']);
 
 Route::post('purchase', [CartController::class, 'purchase']);
+
+Route::get('order', [CartController::class, 'generate']);
+Route::post('order/payment' , [CartController::class, 'makePayment']);
