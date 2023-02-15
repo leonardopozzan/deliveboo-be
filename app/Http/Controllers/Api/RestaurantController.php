@@ -7,6 +7,8 @@ use App\Models\Category;
 use App\Models\Restaurant;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Braintree_Transaction;
+
 
 class RestaurantController extends Controller
 {
@@ -34,6 +36,7 @@ class RestaurantController extends Controller
     {
         $restaurant = Restaurant::where('slug', $slug)->with('types')->with('dishes.category')->with('dishes', function ($q) {
             $q->orderBy('category_id');
+            $q->where('visible', 1);
         })->first();
         if ($restaurant) {
             return response()->json([
