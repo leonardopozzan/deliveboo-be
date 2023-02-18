@@ -25,6 +25,7 @@ class OrderController extends Controller
         }
         $restaurant_id = Auth::user()->restaurant->id;
         $orders = Order::whereHas( 'dishes', function ($query) use ($restaurant_id) {
+                $query->withTrashed();
                 $query->where('restaurant_id', $restaurant_id);
             }
         )->orderBy('id', 'DESC')->paginate(10);
