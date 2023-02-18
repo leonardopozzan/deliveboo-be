@@ -66,15 +66,21 @@ if (previewImage) {
 
 const sideButton = document.getElementById('menu');
 const closeButton = document.getElementById('close');
+const main = document.getElementById('main-container');
+const overlay = document.getElementById('overlay');
 
 
 sideButton.addEventListener('click', (event) => {
     let sideBar = document.getElementById('sidebar');
     sideBar.classList.add('side-open');
+    main.classList.add('main-overlay');
+    overlay.classList.add('side-overlay-active');
 });
 
 closeButton.addEventListener('click', (event) => {
     let sideBar = document.getElementById('sidebar');
     sideBar.classList.remove('side-open');
+    main.classList.remove('main-overlay');
+    overlay.classList.remove('side-overlay-active');
 });
 

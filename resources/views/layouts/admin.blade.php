@@ -25,7 +25,8 @@
 <body>
     <div class="d-flex">
         @include('partials.admin.sidebar')
-        <main class="w-100 position-relative">
+        <main id="main-container" class="w-100 position-relative">
+            <div id="overlay" class="side-overlay"></div>
             @include('partials.admin.header')
             @yield('content')
         </main>
