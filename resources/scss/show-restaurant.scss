@@ -3,98 +3,189 @@
 
 
 .containery {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-
-
-  .cardShow {
-    width: 80%;
-    height: 360px;
+    width: 100%;
     margin: 0 auto;
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 20px;
-    background-color: #dddddd;
 
-    .cardDescriptionShow {
-      height: 360px;
-      margin-right: 30px;
-      line-height: 1.2;
-      font-size: 16px;
-      width: 80%;
-      color: black;
-      font-weight: 700;
-      border-radius: 20px;
-      background-color: #ffffff;
-    }
 
-    .cardImageShow {
-      height: 360px;
-      width: 80%;
-      border-radius: 20px;
-      background-color: #ffffff;
-
-      img {
-        width: 100%;
+    .cardShow {
+        width: 80%;
         height: 360px;
+        margin: 0 auto;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
         border-radius: 20px;
-      }
-    }
+        background-color: #dddddd;
+        margin-bottom: 26px;
 
-  }
+        .cardDescriptionShow {
+            height: 360px;
+            margin-right: 30px;
+            line-height: 1.2;
+            font-size: 16px;
+            width: 80%;
+            color: black;
+            font-weight: 700;
+            border-radius: 20px;
+            background-color: #ffffff;
+        }
+
+        .cardImageShow {
+            height: 360px;
+            width: 80%;
+            border-radius: 20px;
+            background-color: #ffffff;
+
+
+            img {
+                width: 100%;
+                height: 360px;
+                border-radius: 20px;
+            }
+        }
+
+    }
 
 }
 
 .containerInfoShow {
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 30px;
-  margin-top: 30px;
-  padding: 30px 0;
-  background-color: #ffffff;
-  border-radius: 20px;
-
-
-  .containerz {
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+    padding: 30px 0;
+    background-color: #ffffff;
+    border-radius: 20px;
 
 
-    .cardInfoShow {
-      width: 80%;
-      height: 360px;
-      margin: 0 auto;
-      margin-top: 30px;
-      display: flex;
-      justify-content: space-between;
-      border-radius: 20px;
-      background-color: #ffffff;
+    .containerz {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
 
-      .cardOrderShow {
-        height: 360px;
-        margin-right: 30px;
-        line-height: 1.2;
-        font-size: 16px;
-        width: 80%;
-        color: black;
-        font-weight: 700;
-        border-radius: 20px;
-        background-color: #ffffff;
-      }
 
-      .cardGraphShow {
-        height: 360px;
-        width: 90%;
-        border-radius: 20px;
-        background-color: #dddddd;
+        .cardInfoShow {
+            width: 80%;
+            height: 360px;
+            margin: 0 auto;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 20px;
+            background-color: #ffffff;
 
-      }
+            .cardOrderShow {
+                height: 360px;
+                margin-right: 30px;
+                line-height: 1.2;
+                font-size: 16px;
+                width: 80%;
+                color: black;
+                font-weight: 700;
+                border-radius: 20px;
+                background-color: #ffffff;
+            }
+
+            .cardGraphShow {
+                height: 360px;
+                width: 90%;
+                border-radius: 20px;
+                background-color: #dddddd;
+
+            }
+
+        }
+    }
+}
+
+
+
+@media (max-width: 768px) {
+
+    .containery {
+
+
+        .cardShow {
+            flex-direction: column;
+            justify-content: center;
+            height: auto;
+
+            .cardDescriptionShow {
+                height: 360px;
+                margin-right: 0;
+                line-height: 1.2;
+                font-size: 16px;
+                width: 80%;
+                color: black;
+                font-weight: 700;
+                border-radius: 20px;
+                background-color: #ffffff;
+            }
+
+            .cardImageShow {
+                margin-top: 20px;
+                height: 360px;
+                width: 80%;
+                border-radius: 20px;
+                background-color: #ffffff;
+
+                img {
+                    width: 100%;
+                    height: 360px;
+                    border-radius: 20px;
+                }
+            }
+
+        }
 
     }
-  }
+
+
+    .containerInfoShow {
+        display: none;
+        width: 80%;
+        margin: 0 auto;
+        padding: 30px 0;
+        background-color: #ffffff;
+        border-radius: 20px;
+
+
+        .containerz {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+
+            .cardInfoShow {
+                width: 80%;
+                height: 360px;
+                margin: 0 auto;
+                margin-top: 30px;
+                display: flex;
+                justify-content: space-between;
+                border-radius: 20px;
+                background-color: #ffffff;
+
+                .cardOrderShow {
+                    height: 360px;
+                    margin-right: 30px;
+                    line-height: 1.2;
+                    font-size: 16px;
+                    width: 80%;
+                    color: black;
+                    font-weight: 700;
+                    border-radius: 20px;
+                    background-color: #ffffff;
+                }
+
+                .cardGraphShow {
+                    height: 360px;
+                    width: 90%;
+                    border-radius: 20px;
+                    background-color: #dddddd;
+
+                }
+
+            }
+        }
+    }
+
 }
