@@ -31,7 +31,7 @@ table {
     border-collapse: collapse;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
+    // min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
     thead tr {
@@ -77,6 +77,28 @@ table {
     }
 }
 
+@media (max-width: 1200px) {
+
+    .hidden-large {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hidden {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .hidden-small {
+        display: none;
+    }
+}
+
+
 #main-navbar {
     .my-img {
         width: 50px;
@@ -87,6 +109,22 @@ table {
         img {
             width: 100%;
             height: 100%;
+        }
+    }
+
+
+    i {
+        display: none;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #main-navbar {
+
+        i {
+            display: block;
+            cursor: pointer;
         }
     }
 }
