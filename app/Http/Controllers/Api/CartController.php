@@ -84,7 +84,7 @@ class CartController extends Controller
         $new_lead->message = $message;
         $new_lead->save();
 
-        Mail::to($new_lead->email)->send(new CustomerRecap($new_lead));
+        Mail::to($new_lead->email)->send(new CustomerRecap($new_lead, $new_order));
 
         $restaurant_email = Restaurant::where('id',$request->cart[0]['restaurant_id'])->first()->email;
 

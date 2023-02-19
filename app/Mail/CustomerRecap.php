@@ -15,14 +15,17 @@ class CustomerRecap extends Mailable
 
     public $lead;
 
+    public $items;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($_lead)
+    public function __construct($_lead, $_items)
     {
         $this->lead = $_lead;
+        $this->items = $_items;
         
     }
 

@@ -29,7 +29,7 @@
               </svg>
 
 <h1>Non sei autorizzato ad accedere</h1>
-<h2><a target="_blank" href="{{route('admin.dashboard')}}">Home!</a></h2>
+<h2><a  href="{{route('admin.dashboard')}}">Home!</a></h2>
 
 <style>
     @import url("https://fonts.googleapis.com/css?family=Bungee");
