@@ -1,10 +1,7 @@
-<h1>Ciao Persona!</h1>
+<h1>Hai un nuovo ordine da {{$lead->name}}</h1>
 <p>
     <p>
-		Hai ricevuto un nuovo messaggio:<br>
-		Nome: {{ $lead->name }}<br>
-		Email: {{ $lead->email }}<br>
-		Messaggio:<br>
+		Clicca per vedere i dettagli:<br>
 		{{ $lead->message }}
     </p>
 </p>
