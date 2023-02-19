@@ -139,7 +139,13 @@ body {
     width: 80%;
     margin: 50px auto;
     border-radius: 20px;
+
+    @media (max-width: 768px) {
+        width: 92%;
+        margin: 20px auto;
+    }
 }
+
 
 
 
