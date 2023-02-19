@@ -28,7 +28,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($order->dishes as $dish)
+        @foreach ($order->allDishes as $dish)
             <tr>
                 <td>{{$dish->name}}</td>
                 <td>{{$dish->pivot->quantity}}</td>

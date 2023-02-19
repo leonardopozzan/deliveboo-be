@@ -31,7 +31,7 @@
               {{-- Ingredienti piatto--}}
               <div class="mb-3">
                 <label for="ingredients" class="form-label">Ingredienti <span>*</span></label>
-                <textarea class="form-control" id="ingredients" name="ingredients" required >{{old('ingredients')}}</textarea>
+                <textarea class="form-control  @error('ingredients') is-invalid @enderror" id="ingredients" name="ingredients" >{{old('ingredients')}}</textarea>
                 @error('ingredients')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror

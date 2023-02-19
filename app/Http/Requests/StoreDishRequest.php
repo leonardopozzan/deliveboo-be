@@ -29,7 +29,7 @@ class StoreDishRequest extends FormRequest
             'ingredients' => 'required',
             'price' => 'required|numeric|between:0,999',
             'category_id' => 'required|exists:categories,id',
-            'visible' => 'required|boolean',
+            'visible' => 'required',
         ];
     }
     public function messages()
