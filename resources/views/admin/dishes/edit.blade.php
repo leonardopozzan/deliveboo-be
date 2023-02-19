@@ -20,7 +20,7 @@
             {{-- Prezzo piatto--}}
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo <span>*</span></label>
-                <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" value="{{old('price', $dish->price)}}" id="price" name="price" required min="0" max="999">
+                <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" value="{{old('price', $dish->price)}}" required id="price" name="price"  min="0" max="999">
                 @error('price')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -29,7 +29,7 @@
             {{-- Ingredienti piatto--}}
             <div class="mb-3">
                 <label for="ingredients" class="form-label">Ingredienti <span>*</span></label>
-                <textarea class="form-control" id="ingredients" name="ingredients" required >{{old('ingredients', $dish->ingredients)}}</textarea>
+                <textarea class="form-control @error('ingredients') is-invalid @enderror" id="ingredients" name="ingredients"  >{{old('ingredients', $dish->ingredients)}}</textarea>
                 @error('ingredients')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror

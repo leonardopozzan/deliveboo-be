@@ -33,9 +33,9 @@
 
             <div class="d-flex justify-content-around m-4">
                 <a href="{{ route('admin.dishes.index', $dish->slug) }}"
-                    class="btn gradient-1 text-uppercase text-white">indietro</a>
+                    class="btn btn-primary text-uppercase">indietro</a>
                 <a href="{{ route('admin.dishes.edit', $dish->slug) }}"
-                    class="btn gradient-2 text-uppercase text-white">modifica</a>
+                    class="btn btn-danger text-uppercase text-white">modifica</a>
                 {{-- <form action="{{route('admin.dishes.destroy', $dish->slug)}}" method="POST" class=" d-inline">
 			@csrf
 			@method('DELETE')

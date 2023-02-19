@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\LeadController;
 use App\Http\Controllers\Api\RestaurantController;
@@ -34,3 +35,4 @@ Route::post('order/payment' , [CartController::class, 'makePayment']);
 
 Route::post('/contacts', [LeadController::class, 'store']);
 
+Route::post('checkform', [CartController::class, 'checkForm']);
