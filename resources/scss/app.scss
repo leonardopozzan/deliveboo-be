@@ -26,12 +26,14 @@ img {
     max-width: 100%;
 }
 
+
+
 table {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
+    // min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
     thead tr {
@@ -77,6 +79,28 @@ table {
     }
 }
 
+@media (max-width: 1200px) {
+
+    .hidden-large {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hidden {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .hidden-small {
+        display: none;
+    }
+}
+
+
 #main-navbar {
     .my-img {
         width: 50px;
@@ -89,6 +113,22 @@ table {
             height: 100%;
         }
     }
+
+
+    i {
+        display: none;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #main-navbar {
+
+        i {
+            display: block;
+            cursor: pointer;
+        }
+    }
 }
 
 body {
@@ -99,4 +139,36 @@ body {
     width: 80%;
     margin: 50px auto;
     border-radius: 20px;
+
+    @media (max-width: 768px) {
+        width: 92%;
+        margin: 20px auto;
+    }
+}
+
+
+
+
+.main-overlay {
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.side-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.25);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(.215, .61, .355, 1);
+}
+
+
+.side-overlay-active {
+    visibility: visible;
+    opacity: 1;
 }
