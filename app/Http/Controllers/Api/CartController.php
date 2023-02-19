@@ -78,6 +78,7 @@ class CartController extends Controller
                 $message .= $dish->name . ", quantità: " . $dishData['quantity'] .  ", prezzo: " . $dishData['price'] . "<br>";
             };
 
+            
         $new_lead = new Lead();
         $new_lead->name = $data['name'];
         $new_lead->email = $data['email'];
