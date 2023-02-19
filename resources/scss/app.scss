@@ -115,7 +115,7 @@ table {
     }
 
 
-    i {
+    #menu {
         display: none;
     }
 }
@@ -124,7 +124,7 @@ table {
 @media (max-width: 768px) {
     #main-navbar {
 
-        i {
+        #menu {
             display: block;
             cursor: pointer;
         }
