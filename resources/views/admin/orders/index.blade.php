@@ -29,7 +29,7 @@
                             <td><a href="{{ route('admin.orders.show', $order->code) }}"
                                     title="View order">{{ $order->code }}</a></td>
                             <td class="hidden-large hidden-large">{{ $order->email }}</td>
-                            <td class="hidden-small">{{ $order->date }}</td>
+                            <td class="hidden-small">{{ \Carbon\Carbon::parse($order->date)->format('d/m/Y')}}</td>
                             <td class="hidden-large">{{ $order->total_price }}&nbsp;&euro;</td>
                             @if ($order->payment_status)
                                 <td>Pagato</td>
