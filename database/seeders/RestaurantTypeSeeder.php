@@ -23,6 +23,7 @@ class RestaurantTypeSeeder extends Seeder
                     'restaurant_id' => Restaurant::where('name', $restaurant['name'])->first()->id,
                     'type_id' => $type,
                 ]);
+                
         }
     }
 }
