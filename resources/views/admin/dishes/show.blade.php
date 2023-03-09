@@ -4,7 +4,7 @@
     <body>
         <div class="containerShow">
             <div class="titleDish text-center">
-                <h1 class="text-center text-uppercase mb-5 mt-2">{{ $dish->name }}</h1>
+                <h1 class="text-center text-uppercase mb-lg-5 mt-2">{{ $dish->name }}</h1>
             </div>
             <div class="containery">
                 <div class="cardShow">
@@ -15,7 +15,7 @@
                             <img src="https://via.placeholder.com/300x200" alt="">
                         @endif
                     </div>
-                    <div class="cardDescriptionShow p-3 ps-5 ms-5">
+                    <div class="cardDescriptionShow p-lg-3 ms-5">
                         <p>Ingredienti : <span class="text-capitalize"> <em>{{ $dish->ingredients }}</em> </span></p>
                         <p>Prezzo : {{ $dish->price }} €</p>
                         @if ($dish->category)

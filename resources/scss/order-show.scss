@@ -1,19 +1,35 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
 
-#order-show{
+#order-show {
     width: 80%;
     margin: auto;
     background-color: $white;
     border-radius: 50px;
     margin-top: 80px;
     padding: 2rem;
-    table{
+
+    table {
         width: 70%;
         margin: auto;
     }
-    .price{
+
+    .price {
         color: red;
         font-size: 1.3rem;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    #order-show {
+        width: 92%;
+        margin: 22px auto;
+
+        .price {
+            color: red;
+            font-size: 1.3rem;
+        }
     }
 }
