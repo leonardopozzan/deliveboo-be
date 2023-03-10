@@ -26,7 +26,16 @@
                         @else
                             <p>Visibile : No </p>
                         @endif
-
+                        @if (count($dish->additions))
+                            <p>
+                                Aggiunte: 
+                            </p>
+                            <div class="d-flex flex-wrap">
+                                @foreach ($dish->additions as $addition)
+                                <div class="col-4 text-capitalize">{{$addition->name}}</div>
+                                @endforeach
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

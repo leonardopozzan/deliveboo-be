@@ -34,7 +34,7 @@ class RestaurantController extends Controller
 
     public function show($slug)
     {
-        $restaurant = Restaurant::where('slug', $slug)->with('types')->with('dishes.category')->with('dishes', function ($q) {
+        $restaurant = Restaurant::where('slug', $slug)->with('types')->with('dishes.additions')->with('dishes.category')->with('dishes', function ($q) {
             $q->orderBy('category_id');
             $q->where('visible', 1);
         })->first();

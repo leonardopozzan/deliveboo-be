@@ -29,6 +29,11 @@ class Dish extends Model
     {
         return $this->belongsToMany(Order::class);
     }
+
+    public function additions(): BelongsToMany
+    {
+        return $this->belongsToMany(Addition::class);
+    }
     public static function getSlug($name, $id_restaurant)
     {
         $restaurant = Restaurant::where('id',$id_restaurant)->first();
